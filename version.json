@@ -1,6 +1,6 @@
 {
   "latestVersionCode": 2,
   "latestVersionName": "1.0.1",
-  "apkUrl": "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/SS-TV.apk",
+  "apkUrl": "https://raw.githubusercontent.com/paybridgemfs/sstv-version/refs/heads/main/SS-TV.apk",
   "forceUpdate": false
 }
