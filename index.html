@@ -59,8 +59,6 @@
       --shadow-card: 0 22px 54px -22px rgba(0, 0, 0, 0.8);
       --shadow-accent: 0 14px 36px -10px rgba(0, 210, 255, 0.36);
       --nav-bg: rgba(5, 8, 16, 0.8);
-      --bezel-bg: #0A0E17;
-      --bezel-ring: rgba(255, 255, 255, 0.12);
     }
 
     html[data-theme="light"] {
@@ -84,8 +82,6 @@
       --shadow-card: 0 20px 44px -22px rgba(15, 23, 42, 0.15);
       --shadow-accent: 0 14px 32px -10px rgba(2, 132, 199, 0.3);
       --nav-bg: rgba(244, 247, 251, 0.85);
-      --bezel-bg: #111827;
-      --bezel-ring: rgba(15, 23, 42, 0.16);
     }
 
     *, *::before, *::after {
@@ -702,24 +698,10 @@
       100% { background-position: -200% 0; }
     }
 
-    /* Hero 16:9 TV Showcase Frame */
+    /* Hero 16:9 Screenshot Slider (screenshots already include TV frame) */
     .tv-showcase {
       position: relative;
       width: 100%;
-    }
-
-    .tv-bezel {
-      position: relative;
-      border-radius: clamp(14px, 2vw, 22px);
-      padding: clamp(7px, 1.1vw, 12px);
-      background: var(--bezel-bg);
-      border: 1px solid var(--bezel-ring);
-      box-shadow: var(--shadow-card);
-      transition: transform 0.45s var(--ease-out-expo), box-shadow 0.45s ease;
-    }
-
-    .tv-bezel:hover {
-      transform: translateY(-3px);
     }
 
     .tv-screen {
@@ -728,8 +710,9 @@
       aspect-ratio: 16 / 9;
       border-radius: clamp(8px, 1.2vw, 12px);
       overflow: hidden;
-      background: #04070D;
+      background: transparent;
       touch-action: pan-y;
+      cursor: pointer;
     }
 
     .tv-slides-track {
@@ -742,103 +725,15 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.32s ease;
       pointer-events: none;
     }
 
     .tv-slide-layer.active {
       opacity: 1;
-    }
-
-    .tv-osd-bar {
-      position: absolute;
-      left: clamp(8px, 1.5vw, 14px);
-      right: clamp(8px, 1.5vw, 14px);
-      bottom: clamp(8px, 1.5vw, 14px);
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: clamp(6px, 1.2vw, 10px) clamp(10px, 1.5vw, 14px);
-      border-radius: 11px;
-      background: rgba(6, 10, 18, 0.88);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #F8FAFC;
-    }
-
-    .tv-osd-meta {
-      min-width: 0;
-      flex: 1;
-    }
-
-    .tv-osd-title {
-      font-size: clamp(0.72rem, 0.7rem + 0.2vw, 0.85rem);
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .tv-osd-progress {
-      margin-top: 5px;
-      width: 100%;
-      height: 2px;
-      border-radius: 2px;
-      background: rgba(255, 255, 255, 0.14);
-      overflow: hidden;
-    }
-
-    .tv-osd-progress-bar {
-      height: 100%;
-      width: 100%;
-      transform-origin: left center;
-      transform: scaleX(0);
-      background: var(--accent);
-    }
-
-    .tv-osd-controls {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      flex-shrink: 0;
-    }
-
-    .tv-osd-btn {
-      width: clamp(26px, 3.2vw, 32px);
-      height: clamp(26px, 3.2vw, 32px);
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.08);
-      color: #FFFFFF;
-      display: grid;
-      place-items: center;
-      font-size: 0.85rem;
-      transition: background 0.18s ease, transform 0.15s ease;
-    }
-
-    .tv-osd-btn:hover {
-      background: rgba(0, 210, 255, 0.35);
-      transform: scale(1.06);
-    }
-
-    .tv-stand {
-      width: 34%;
-      height: clamp(6px, 1vw, 10px);
-      margin: 0 auto;
-      background: linear-gradient(to bottom, #1E293B, #0F172A);
-      border-radius: 0 0 10px 10px;
-    }
-
-    .tv-base {
-      width: 52%;
-      height: 4px;
-      margin: 0 auto;
-      background: linear-gradient(to right, transparent, var(--border-strong), transparent);
-      border-radius: 999px;
     }
 
     .tv-thumb-strip {
@@ -853,7 +748,7 @@
       border-radius: 7px;
       overflow: hidden;
       border: 2px solid transparent;
-      background: var(--bg-card-solid);
+      background: var(--bg-subtle);
       padding: 0;
       opacity: 0.58;
       transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.22s var(--ease-out-expo);
@@ -873,7 +768,7 @@
     .tv-thumb img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -1128,14 +1023,14 @@
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #050811;
+      background: var(--bg-subtle);
       overflow: hidden;
     }
 
     .shot-media img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       transition: transform 0.45s var(--ease-out-expo);
     }
@@ -1721,28 +1616,11 @@
           </div>
         </div>
 
-        <!-- Interactive 16:9 TV Display Showcase -->
+        <!-- Interactive 16:9 Screenshot Slider (screenshots already include TV frame) -->
         <div class="tv-showcase hero-anim hero-delay-tv">
-          <div class="tv-bezel">
-            <div class="tv-screen" id="heroTvScreen">
-              <div class="tv-slides-track" id="heroSlidesTrack"></div>
-              <div class="tv-osd-bar">
-                <div class="tv-osd-meta">
-                  <div class="tv-osd-title" id="heroSlideTitle">01 · Main Channel Grid &amp; Telemetry</div>
-                  <div class="tv-osd-progress" aria-hidden="true">
-                    <div class="tv-osd-progress-bar" id="heroSlideProgress"></div>
-                  </div>
-                </div>
-                <div class="tv-osd-controls">
-                  <button type="button" class="tv-osd-btn" id="heroPrevSlide" aria-label="Previous screenshot">&#8592;</button>
-                  <button type="button" class="tv-osd-btn" id="heroNextSlide" aria-label="Next screenshot">&#8594;</button>
-                  <button type="button" class="tv-osd-btn" id="heroZoomSlide" aria-label="Expand screenshot">&#9974;</button>
-                </div>
-              </div>
-            </div>
+          <div class="tv-screen" id="heroTvScreen" role="button" tabindex="0" aria-label="View full-size screenshot">
+            <div class="tv-slides-track" id="heroSlidesTrack"></div>
           </div>
-          <div class="tv-stand"></div>
-          <div class="tv-base"></div>
           <div class="tv-thumb-strip" id="heroThumbStrip" aria-label="TV Screenshot Selector"></div>
         </div>
       </div>
@@ -2259,9 +2137,8 @@
       // ---- Eager Parallel Preload of ALL Images + Stacked TV Slides ----
       let activeSlideIndex = 0;
       const SLIDE_DURATION_MS = 4800;
+      const heroTvScreen = document.getElementById("heroTvScreen");
       const heroSlidesTrack = document.getElementById("heroSlidesTrack");
-      const heroSlideTitle = document.getElementById("heroSlideTitle");
-      const heroSlideProgress = document.getElementById("heroSlideProgress");
       const heroThumbStrip = document.getElementById("heroThumbStrip");
       const galleryGrid = document.getElementById("galleryGrid");
       const slideImageEls = [];
@@ -2283,7 +2160,6 @@
         heroThumbStrip.innerHTML = "";
 
         SCREENSHOTS.forEach((shot, index) => {
-          // Stacked eager slide image inside the 16:9 TV frame for instant zero-lag crossfades
           const slideImg = document.createElement("img");
           slideImg.src = shot.url;
           slideImg.alt = shot.title;
@@ -2293,7 +2169,6 @@
           heroSlidesTrack.appendChild(slideImg);
           slideImageEls.push(slideImg);
 
-          // Eager thumbnail
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "tv-thumb" + (index === activeSlideIndex ? " active" : "");
@@ -2308,43 +2183,32 @@
         });
       }
 
-      function restartSlideProgressBar() {
-        heroSlideProgress.style.transition = "none";
-        heroSlideProgress.style.transform = "scaleX(0)";
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            heroSlideProgress.style.transition = "transform " + SLIDE_DURATION_MS + "ms linear";
-            heroSlideProgress.style.transform = "scaleX(1)";
-          });
-        });
-      }
-
       function setHeroSlide(index) {
         activeSlideIndex = (index + SCREENSHOTS.length) % SCREENSHOTS.length;
-        const shot = SCREENSHOTS[activeSlideIndex];
         slideImageEls.forEach((imgEl, idx) => {
           imgEl.classList.toggle("active", idx === activeSlideIndex);
         });
-        heroSlideTitle.textContent = "0" + (activeSlideIndex + 1) + " · " + shot.title;
         Array.from(heroThumbStrip.children).forEach((el, idx) => {
           el.classList.toggle("active", idx === activeSlideIndex);
         });
-        restartSlideProgressBar();
       }
 
-      document.getElementById("heroPrevSlide").addEventListener("click", () => {
-        setHeroSlide(activeSlideIndex - 1);
-        resetAutoCycle();
-      });
-      document.getElementById("heroNextSlide").addEventListener("click", () => {
-        setHeroSlide(activeSlideIndex + 1);
-        resetAutoCycle();
-      });
-      document.getElementById("heroZoomSlide").addEventListener("click", () => {
+      let didSwipeSlide = false;
+      heroTvScreen.addEventListener("click", () => {
+        if (didSwipeSlide) {
+          didSwipeSlide = false;
+          return;
+        }
         openLightbox(activeSlideIndex);
       });
+      heroTvScreen.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLightbox(activeSlideIndex);
+        }
+      });
 
-      function attachHorizontalSwipe(element, onPrev, onNext) {
+      function attachHorizontalSwipe(element, onPrev, onNext, onSwipeDetected) {
         let startX = 0;
         let startY = 0;
         element.addEventListener("touchstart", (e) => {
@@ -2357,21 +2221,22 @@
           const dx = e.changedTouches[0].clientX - startX;
           const dy = e.changedTouches[0].clientY - startY;
           if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.3) {
+            if (onSwipeDetected) onSwipeDetected();
             if (dx < 0) onNext(); else onPrev();
           }
         }, { passive: true });
       }
 
       attachHorizontalSwipe(
-        document.getElementById("heroTvScreen"),
+        heroTvScreen,
         () => { setHeroSlide(activeSlideIndex - 1); resetAutoCycle(); },
-        () => { setHeroSlide(activeSlideIndex + 1); resetAutoCycle(); }
+        () => { setHeroSlide(activeSlideIndex + 1); resetAutoCycle(); },
+        () => { didSwipeSlide = true; }
       );
 
       let cycleTimer = null;
       function resetAutoCycle() {
         if (cycleTimer) clearInterval(cycleTimer);
-        restartSlideProgressBar();
         cycleTimer = setInterval(() => {
           if (!document.getElementById("lightbox").classList.contains("open")) {
             setHeroSlide(activeSlideIndex + 1);
