@@ -1,6 +1,6 @@
 {
-  "latestVersionCode": 2,
-  "latestVersionName": "1.0.1",
+  "latestVersionCode": 1,
+  "latestVersionName": "1.0.0",
   "apkUrl": "https://raw.githubusercontent.com/paybridgemfs/sstv-version/refs/heads/main/SS-TV.apk",
   "forceUpdate": false
 }
