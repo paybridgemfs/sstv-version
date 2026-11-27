@@ -2,5 +2,5 @@
   "latestVersionCode": 4,
   "latestVersionName": "2.1.0",
   "apkUrl": "https://github.com/paybridgemfs/sstv-version/releases/latest/download/sstv.apk",
-  "forceUpdate": false
+  "forceUpdate": true
 }
