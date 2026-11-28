@@ -3,85 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>SS TV — Live Television for Android TV | SS Tech Zone</title>
+  <title>SS TV — Live TV for Android Mobile &amp; Android TV | SS Tech Zone</title>
   <meta
     name="description"
-    content="Download SS TV for Android TV & Google TV. Fast live channel grid, automatic stream failover, TV voice search, 10 cinematic themes, and remote number tuning by SS Tech Zone."
+    content="Download SS TV for Android Mobile and Android TV. Adaptive TV &amp; touch interface, Media3 ExoPlayer with auto-failover, PiP, voice search, 11 themes, custom Favorites ordering, and in-app OTA updates by SS Tech Zone."
   />
-  <meta name="theme-color" content="#060911" />
+  <meta name="theme-color" content="#0B0B0E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
-  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png" />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@500;600&display=swap"
     rel="stylesheet"
   />
   <style>
     :root {
-      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-      --space-section: clamp(44px, 6.5vw, 88px);
-      --space-card: clamp(18px, 2.8vw, 30px);
-      --container-pad: clamp(14px, 4vw, 32px);
-
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 22px;
-      --radius-xl: clamp(20px, 3vw, 28px);
-
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-theme: background-color 0.32s ease, color 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+      --space-section: clamp(44px, 6vw, 80px);
+      --pad-container: clamp(16px, 4vw, 32px);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
     }
 
     html[data-theme="dark"] {
-      --bg-canvas: #050810;
-      --bg-elevated: #0B1120;
-      --bg-card: rgba(13, 20, 35, 0.76);
-      --bg-card-solid: #0E1628;
-      --bg-subtle: rgba(255, 255, 255, 0.045);
-      --ink: #F1F5F9;
-      --ink-secondary: #94A3B8;
-      --ink-muted: #64748B;
-      --border: rgba(148, 163, 184, 0.16);
-      --border-strong: rgba(0, 210, 255, 0.42);
-      --accent: #00D2FF;
-      --accent-2: #38BDF8;
-      --accent-soft: rgba(0, 210, 255, 0.12);
-      --accent-ink: #031322;
+      --bg: #0B0B0E;
+      --surface: #131318;
+      --surface-2: #1A1A22;
+      --surface-3: #22222C;
+      --ink: #F4F4F6;
+      --ink-2: #A6A6B4;
+      --ink-3: #717182;
+      --border: #252530;
+      --border-strong: #3B3B4C;
+      --accent: #E11D48;
+      --accent-hover: #F43F5E;
+      --accent-soft: #26121A;
+      --accent-border: #5E1B2E;
+      --accent-ink: #FFFFFF;
       --live: #10B981;
-      --live-soft: rgba(16, 185, 129, 0.14);
-      --grid-line: rgba(148, 163, 184, 0.05);
-      --shadow-card: 0 22px 54px -22px rgba(0, 0, 0, 0.8);
-      --shadow-accent: 0 14px 36px -10px rgba(0, 210, 255, 0.36);
-      --nav-bg: rgba(5, 8, 16, 0.8);
+      --live-soft: #0D231C;
+      --live-border: #174939;
+      --telegram: #229ED9;
+      --telegram-ink: #031521;
+      --whatsapp: #10B981;
+      --whatsapp-ink: #031F16;
+      --frame-bg: #070709;
     }
 
     html[data-theme="light"] {
-      --bg-canvas: #F4F7FB;
-      --bg-elevated: #FFFFFF;
-      --bg-card: rgba(255, 255, 255, 0.9);
-      --bg-card-solid: #FFFFFF;
-      --bg-subtle: rgba(15, 23, 42, 0.04);
-      --ink: #0F172A;
-      --ink-secondary: #475569;
-      --ink-muted: #64748B;
-      --border: rgba(15, 23, 42, 0.11);
-      --border-strong: rgba(2, 132, 199, 0.42);
-      --accent: #0284C7;
-      --accent-2: #0369A1;
-      --accent-soft: rgba(2, 132, 199, 0.1);
+      --bg: #F6F5F2;
+      --surface: #FFFFFF;
+      --surface-2: #EFECE6;
+      --surface-3: #E5E1D9;
+      --ink: #131317;
+      --ink-2: #4B4B57;
+      --ink-3: #6D6D7A;
+      --border: #DFDCD4;
+      --border-strong: #C6C2B8;
+      --accent: #BE123C;
+      --accent-hover: #9F1239;
+      --accent-soft: #FCE7EC;
+      --accent-border: #F4B3C3;
       --accent-ink: #FFFFFF;
-      --live: #059669;
-      --live-soft: rgba(5, 150, 105, 0.12);
-      --grid-line: rgba(15, 23, 42, 0.045);
-      --shadow-card: 0 20px 44px -22px rgba(15, 23, 42, 0.15);
-      --shadow-accent: 0 14px 32px -10px rgba(2, 132, 199, 0.3);
-      --nav-bg: rgba(244, 247, 251, 0.85);
+      --live: #047857;
+      --live-soft: #E6F7F1;
+      --live-border: #A7E3CE;
+      --telegram: #0284C7;
+      --telegram-ink: #FFFFFF;
+      --whatsapp: #059669;
+      --whatsapp-ink: #FFFFFF;
+      --frame-bg: #111116;
     }
 
     *, *::before, *::after {
@@ -91,7 +89,6 @@
     }
 
     html {
-      scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       text-size-adjust: 100%;
       overflow-x: clip;
@@ -99,17 +96,17 @@
 
     body {
       font-family: var(--font-sans);
-      font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1.02rem);
-      background-color: var(--bg-canvas);
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: var(--bg);
       color: var(--ink);
-      line-height: 1.62;
-      transition: var(--transition-theme);
       overflow-x: clip;
       min-height: 100vh;
     }
 
     img, svg {
       max-width: 100%;
+      display: block;
     }
 
     a {
@@ -122,203 +119,104 @@
       cursor: pointer;
     }
 
-    button:focus-visible, a:focus-visible {
+    a:focus-visible,
+    button:focus-visible {
       outline: 2px solid var(--accent);
-      outline-offset: 3px;
+      outline-offset: 2px;
     }
 
-    /* Scroll Progress Bar */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 100%;
-      z-index: 60;
-      transform-origin: left center;
-      transform: scaleX(0);
-      background: linear-gradient(90deg, var(--accent), var(--live));
-      pointer-events: none;
-    }
-
-    /* Contained Ambient Studio Background */
-    .ambient-layer {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .studio-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-      background-size: clamp(36px, 4vw, 56px) clamp(36px, 4vw, 56px);
-      mask-image: radial-gradient(ellipse 90% 70% at 50% 10%, #000 35%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 10%, #000 35%, transparent 100%);
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .orb-primary {
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(1040px, 115vw);
-      height: 520px;
-      background: radial-gradient(ellipse at center, var(--accent-soft) 0%, transparent 70%);
-    }
-
-    .orb-secondary {
-      bottom: -220px;
-      right: -140px;
-      width: min(700px, 90vw);
-      height: 480px;
-      background: radial-gradient(ellipse at center, var(--live-soft) 0%, transparent 70%);
-    }
-
-    /* Container */
     .container {
       width: 100%;
-      max-width: 1240px;
+      max-width: 1220px;
       margin-inline: auto;
-      padding-inline: var(--container-pad);
+      padding-inline: var(--pad-container);
     }
 
-    /* Top Navigation */
+    /* Header */
     .navbar {
       position: sticky;
       top: 0;
-      z-index: 45;
-      background: var(--bg-canvas);
+      z-index: 40;
+      background-color: var(--bg);
       border-bottom: 1px solid var(--border);
-      transition: background-color 0.25s ease, border-color 0.25s ease;
     }
 
     .navbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      min-height: clamp(62px, 7vw, 74px);
+      gap: 14px;
+      min-height: 66px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 11px;
       min-width: 0;
-      flex-shrink: 1;
     }
 
-    .brand-logo-wrap {
-      width: clamp(38px, 4.5vw, 44px);
-      height: clamp(38px, 4.5vw, 44px);
-      border-radius: 12px;
-      background: var(--bg-card-solid);
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       border: 1px solid var(--border);
-      display: grid;
-      place-items: center;
+      background-color: var(--surface);
       overflow: hidden;
       flex-shrink: 0;
-      box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.45);
-      transition: transform 0.25s var(--ease-out-expo), border-color 0.25s ease;
     }
 
-    .brand:hover .brand-logo-wrap {
-      transform: scale(1.05);
-      border-color: var(--border-strong);
-    }
-
-    .brand-logo-wrap img,
-    .hero-app-icon img {
+    .brand-icon img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .brand-logo-wrap.has-image img,
-    .hero-app-icon.has-image img {
-      display: block;
-    }
-
-    .brand-logo-wrap.has-image svg,
-    .hero-app-icon.has-image svg {
-      display: none;
-    }
-
-    .brand-text {
+    .brand-meta {
       display: flex;
       flex-direction: column;
-      line-height: 1.15;
+      line-height: 1.12;
       min-width: 0;
     }
 
     .brand-name {
       font-family: var(--font-display);
-      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-      font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
       white-space: nowrap;
     }
 
-    .brand-name .accent {
+    .brand-name span {
       color: var(--accent);
     }
 
     .brand-sub {
       font-size: 0.72rem;
-      color: var(--ink-muted);
+      color: var(--ink-3);
       font-weight: 500;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(14px, 2vw, 26px);
+      gap: 24px;
     }
 
     .nav-links a {
-      position: relative;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: var(--ink-secondary);
+      color: var(--ink-2);
       white-space: nowrap;
-      padding: 6px 2px;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.25s var(--ease-out-expo);
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.14s ease, border-color 0.14s ease;
     }
 
     .nav-links a:hover {
       color: var(--ink);
-    }
-
-    .nav-links a:hover::after {
-      transform: scaleX(1);
+      border-bottom-color: var(--accent);
     }
 
     .nav-actions {
@@ -328,33 +226,25 @@
       flex-shrink: 0;
     }
 
-    .theme-toggle {
+    .icon-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 7px;
       height: 38px;
       padding: 0 12px;
-      border-radius: 999px;
+      border-radius: 9px;
       border: 1px solid var(--border);
-      background: var(--bg-card);
+      background-color: var(--surface);
       color: var(--ink);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      white-space: nowrap;
-      transition: var(--transition-theme), transform 0.2s var(--ease-out-expo);
+      transition: border-color 0.14s ease, background-color 0.14s ease;
     }
 
-    .theme-toggle:hover {
+    .icon-btn:hover {
       border-color: var(--border-strong);
-      transform: translateY(-1px);
-    }
-
-    .theme-toggle svg {
-      transition: transform 0.4s var(--ease-out-expo);
-    }
-
-    .theme-toggle:hover svg {
-      transform: rotate(24deg);
+      background-color: var(--surface-2);
     }
 
     .nav-cta {
@@ -363,318 +253,257 @@
       gap: 7px;
       height: 38px;
       padding: 0 15px;
-      border-radius: 999px;
-      background: var(--accent);
+      border-radius: 9px;
+      background-color: var(--accent);
       color: var(--accent-ink);
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 700;
       white-space: nowrap;
-      box-shadow: var(--shadow-accent);
-      transition: transform 0.2s var(--ease-out-expo), filter 0.2s ease;
+      transition: background-color 0.14s ease;
     }
 
     .nav-cta:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.06);
+      background-color: var(--accent-hover);
     }
 
     .menu-btn {
       display: none;
       width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      color: var(--ink);
-      place-items: center;
-      transition: border-color 0.2s ease;
+      padding: 0;
     }
 
-    .menu-btn:hover {
-      border-color: var(--border-strong);
-    }
-
-    /* Collapsible Mobile Nav Drawer */
     .mobile-drawer {
       display: none;
-      overflow: hidden;
-      max-height: 0;
-      opacity: 0;
-      border-top: 1px solid transparent;
-      transition: max-height 0.35s var(--ease-out-expo), opacity 0.25s ease, border-color 0.25s ease;
+      border-top: 1px solid var(--border);
+      padding: 12px 0 16px;
     }
 
     .mobile-drawer.open {
-      max-height: 320px;
-      opacity: 1;
-      border-top-color: var(--border);
+      display: block;
     }
 
-    .mobile-drawer-links {
+    .mobile-drawer-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
-      padding: 14px 0 16px;
     }
 
-    .mobile-drawer-links a {
+    .mobile-drawer-grid a {
       padding: 10px 12px;
-      border-radius: 10px;
-      background: var(--bg-subtle);
+      border-radius: 9px;
       border: 1px solid var(--border);
+      background-color: var(--surface);
+      color: var(--ink-2);
       font-size: 0.86rem;
       font-weight: 600;
-      color: var(--ink-secondary);
       text-align: center;
-      transition: border-color 0.2s ease, color 0.2s ease;
     }
 
-    .mobile-drawer-links a:hover {
+    .mobile-drawer-grid a:hover {
       border-color: var(--border-strong);
       color: var(--ink);
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
-      padding: clamp(28px, 5vw, 60px) 0 clamp(32px, 4.5vw, 52px);
+      padding: clamp(28px, 4.5vw, 56px) 0 clamp(36px, 5vw, 60px);
+      border-bottom: 1px solid var(--border);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.14fr);
-      gap: clamp(26px, 4vw, 48px);
-      align-items: center;
+      grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+      gap: clamp(28px, 4vw, 52px);
+      align-items: start;
     }
 
-    .hero-grid > *,
-    .control-panel > *,
-    .features-grid > *,
-    .gallery-grid > *,
-    .steps-grid > * {
+    .hero-grid > * {
       min-width: 0;
     }
 
-    /* Entrance Stagger Animation */
-    .hero-anim {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: heroRise 0.72s var(--ease-out-expo) forwards;
-    }
-
-    .hero-delay-1 { animation-delay: 0.05s; }
-    .hero-delay-2 { animation-delay: 0.13s; }
-    .hero-delay-3 { animation-delay: 0.21s; }
-    .hero-delay-4 { animation-delay: 0.29s; }
-    .hero-delay-5 { animation-delay: 0.37s; }
-    .hero-delay-tv { animation-delay: 0.18s; }
-
-    @keyframes heroRise {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-kicker-row {
+    .status-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 8px;
-      margin-bottom: clamp(14px, 2vw, 20px);
+      margin-bottom: 18px;
     }
 
-    .live-pill {
+    .tag-pill {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--live-soft);
-      color: var(--live);
-      font-size: clamp(0.7rem, 0.72rem + 0.1vw, 0.78rem);
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      padding: 5px 11px;
+      border-radius: 7px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
+    }
+
+    .tag-live {
+      background-color: var(--live-soft);
+      border: 1px solid var(--live-border);
+      color: var(--live);
     }
 
     .live-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--live);
-      animation: pulseLive 2.2s ease-in-out infinite;
+      background-color: var(--live);
     }
 
-    @keyframes pulseLive {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(0.78); }
-    }
-
-    .version-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid var(--border-strong);
+    .tag-version {
+      background-color: var(--accent-soft);
+      border: 1px solid var(--accent-border);
       color: var(--accent);
-      font-family: var(--font-mono);
-      font-size: clamp(0.72rem, 0.72rem + 0.1vw, 0.8rem);
-      font-weight: 600;
     }
 
-    .hero-identity {
+    .tag-platform {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink-2);
+    }
+
+    .hero-head {
       display: flex;
       align-items: center;
-      gap: clamp(12px, 2vw, 18px);
+      gap: 16px;
       margin-bottom: 14px;
     }
 
     .hero-app-icon {
-      width: clamp(54px, 6.5vw, 72px);
-      height: clamp(54px, 6.5vw, 72px);
-      border-radius: clamp(14px, 2vw, 18px);
-      background: var(--bg-card-solid);
-      border: 1px solid var(--border);
-      display: grid;
-      place-items: center;
+      width: clamp(56px, 6vw, 68px);
+      height: clamp(56px, 6vw, 68px);
+      border-radius: 15px;
+      border: 1px solid var(--border-strong);
+      background-color: var(--surface);
       overflow: hidden;
       flex-shrink: 0;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.25s var(--ease-out-expo);
     }
 
-    .hero-app-icon:hover {
-      transform: translateY(-2px) scale(1.03);
+    .hero-app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(1.85rem, 1.3rem + 2.5vw, 3.25rem);
-      font-weight: 700;
-      line-height: 1.08;
+      font-size: clamp(2rem, 1.4rem + 2.3vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.06;
       letter-spacing: -0.03em;
-      min-width: 0;
     }
 
-    .hero-title .accent {
+    .hero-title span {
       color: var(--accent);
     }
 
-    .hero-subtitle {
+    .hero-lead {
+      color: var(--ink-2);
+      font-size: clamp(0.95rem, 0.92rem + 0.2vw, 1.05rem);
+      max-width: 54ch;
       margin-top: 12px;
-      font-size: clamp(0.92rem, 0.88rem + 0.28vw, 1.06rem);
-      color: var(--ink-secondary);
-      max-width: 56ch;
     }
 
-    .hero-cta-group {
+    .cta-row {
       display: flex;
       flex-wrap: wrap;
       align-items: stretch;
-      gap: 12px;
-      margin-top: clamp(20px, 3vw, 28px);
+      gap: 10px;
+      margin-top: 24px;
     }
 
-    .btn-download {
-      position: relative;
-      overflow: hidden;
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 13px 22px;
-      border-radius: 14px;
-      background: var(--accent);
+      padding: 13px 20px;
+      border-radius: 11px;
+      background-color: var(--accent);
       color: var(--accent-ink);
       font-weight: 700;
-      font-size: clamp(0.9rem, 0.88rem + 0.15vw, 0.98rem);
-      border: none;
-      box-shadow: var(--shadow-accent);
-      transition: transform 0.2s var(--ease-out-expo), filter 0.2s ease, opacity 0.2s ease;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: background-color 0.14s ease, opacity 0.14s ease;
     }
 
-    .btn-download:hover:not(.is-loading) {
-      transform: translateY(-2px);
-      filter: brightness(1.06);
+    .btn-primary:hover:not(.is-loading) {
+      background-color: var(--accent-hover);
     }
 
-    .btn-download.is-loading {
-      opacity: 0.82;
+    .btn-primary.is-loading {
+      opacity: 0.8;
       pointer-events: none;
     }
 
-    .btn-download-meta {
+    .btn-primary-text {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       line-height: 1.2;
-      min-width: 0;
     }
 
-    .btn-download-sub {
+    .btn-primary-sub {
       font-family: var(--font-mono);
-      font-size: clamp(0.68rem, 0.66rem + 0.1vw, 0.74rem);
-      font-weight: 600;
-      opacity: 0.88;
-      white-space: nowrap;
+      font-size: 0.72rem;
+      font-weight: 500;
+      opacity: 0.92;
     }
 
-    .btn-secondary {
+    .btn-outline {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 13px 18px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
+      padding: 13px 17px;
+      border-radius: 11px;
+      border: 1px solid var(--border-strong);
+      background-color: var(--surface);
       color: var(--ink);
       font-weight: 600;
-      font-size: clamp(0.88rem, 0.85rem + 0.15vw, 0.94rem);
-      transition: var(--transition-theme), transform 0.22s var(--ease-out-expo);
+      font-size: 0.92rem;
+      transition: border-color 0.14s ease, background-color 0.14s ease;
     }
 
-    .btn-secondary:hover {
-      border-color: var(--border-strong);
-      transform: translateY(-2px);
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background-color: var(--surface-2);
     }
 
-    /* Spec Strip */
-    .spec-strip {
-      margin-top: clamp(20px, 3vw, 28px);
+    .metrics-strip {
+      margin-top: 24px;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .spec-cell {
-      padding: clamp(10px, 1.5vw, 14px);
-      border-radius: var(--radius-md);
-      background: var(--bg-card);
+      gap: 1px;
+      background-color: var(--border);
       border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .metric-cell {
+      background-color: var(--surface);
+      padding: 12px 14px;
       min-width: 0;
-      transition: var(--transition-theme), transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .spec-cell:hover {
-      border-color: var(--border-strong);
-      transform: translateY(-2px);
-    }
-
-    .spec-label {
-      font-size: 0.7rem;
+    .metric-label {
+      font-size: 0.69rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--ink-muted);
+      letter-spacing: 0.06em;
+      color: var(--ink-3);
     }
 
-    .spec-value {
+    .metric-val {
       margin-top: 3px;
       font-family: var(--font-mono);
-      font-size: clamp(0.8rem, 0.78rem + 0.15vw, 0.92rem);
+      font-size: 0.86rem;
       font-weight: 600;
       color: var(--ink);
       white-space: nowrap;
@@ -682,504 +511,590 @@
       text-overflow: ellipsis;
     }
 
-    .skeleton-shimmer {
-      display: inline-block;
-      min-width: 64px;
-      height: 1em;
-      border-radius: 6px;
-      background: linear-gradient(90deg, var(--bg-subtle) 25%, var(--accent-soft) 50%, var(--bg-subtle) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite linear;
-      vertical-align: middle;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* Hero 16:9 Screenshot Slider (screenshots already include TV frame) */
-    .tv-showcase {
-      position: relative;
-      width: 100%;
-    }
-
-    .tv-screen {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: clamp(8px, 1.2vw, 12px);
+    /* Static Interactive Device Previewer (Zero Slide Animation) */
+    .preview-shell {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background-color: var(--surface);
       overflow: hidden;
+    }
+
+    .preview-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--surface-2);
+    }
+
+    .segmented {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background-color: var(--bg);
+      gap: 3px;
+    }
+
+    .seg-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 7px;
       background: transparent;
-      touch-action: pan-y;
+      color: var(--ink-2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background-color 0.12s ease, color 0.12s ease;
+    }
+
+    .seg-btn:hover {
+      color: var(--ink);
+    }
+
+    .seg-btn.active {
+      background-color: var(--accent);
+      color: var(--accent-ink);
+    }
+
+    .preview-counter {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-3);
+    }
+
+    .preview-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: var(--frame-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
       cursor: pointer;
     }
 
-    .tv-slides-track {
-      position: absolute;
-      inset: 0;
-    }
-
-    .tv-slide-layer {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+    .preview-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
       object-fit: contain;
-      display: block;
-      opacity: 0;
-      transition: opacity 0.32s ease;
-      pointer-events: none;
+      border-radius: 6px;
     }
 
-    .tv-slide-layer.active {
-      opacity: 1;
+    .preview-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
     }
 
-    .tv-thumb-strip {
-      margin-top: 12px;
-      display: grid;
-      grid-template-columns: repeat(8, minmax(0, 1fr));
-      gap: clamp(5px, 0.8vw, 8px);
+    .preview-caption {
+      min-width: 0;
     }
 
-    .tv-thumb {
-      aspect-ratio: 16 / 9;
+    .preview-caption-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .preview-caption-sub {
+      font-size: 0.8rem;
+      color: var(--ink-2);
+    }
+
+    .preview-nav-btns {
+      display: inline-flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .mini-btn {
+      height: 32px;
+      padding: 0 10px;
       border-radius: 7px;
+      border: 1px solid var(--border);
+      background-color: var(--surface-2);
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .mini-btn:hover {
+      border-color: var(--accent);
+    }
+
+    .thumb-strip {
+      display: flex;
+      gap: 6px;
+      padding: 10px 14px 14px;
+      border-top: 1px solid var(--border);
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .thumb-btn {
+      flex: 0 0 auto;
+      height: 46px;
+      min-width: 72px;
+      max-width: 84px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      background-color: var(--frame-bg);
       overflow: hidden;
-      border: 2px solid transparent;
-      background: var(--bg-subtle);
-      padding: 0;
-      opacity: 0.58;
-      transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.22s var(--ease-out-expo);
+      padding: 2px;
+      opacity: 0.65;
     }
 
-    .tv-thumb:hover {
+    .thumb-btn.is-mobile {
+      min-width: 44px;
+      max-width: 48px;
+      height: 62px;
+    }
+
+    .thumb-btn:hover {
       opacity: 0.95;
-      transform: translateY(-2px);
+      border-color: var(--border-strong);
     }
 
-    .tv-thumb.active {
+    .thumb-btn.active {
       opacity: 1;
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px var(--accent-soft);
     }
 
-    .tv-thumb img {
+    .thumb-btn img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      display: block;
     }
 
-    /* Sections & Scroll Reveal */
+    /* Sections */
     .section {
       padding: var(--space-section) 0;
+      border-bottom: 1px solid var(--border);
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.42s var(--ease-out-expo), transform 0.42s var(--ease-out-expo);
+    .section:last-of-type {
+      border-bottom: none;
     }
 
-    .reveal.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section-header {
+    .section-head {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-end;
       justify-content: space-between;
-      gap: 14px 24px;
-      margin-bottom: clamp(22px, 3.2vw, 34px);
+      gap: 14px 28px;
+      margin-bottom: clamp(24px, 3vw, 36px);
     }
 
-    .section-eyebrow {
+    .eyebrow {
       font-family: var(--font-mono);
-      font-size: clamp(0.7rem, 0.7rem + 0.1vw, 0.78rem);
+      font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
       color: var(--accent);
       margin-bottom: 6px;
     }
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.42rem, 1.1rem + 1.55vw, 2.3rem);
-      font-weight: 700;
+      font-size: clamp(1.48rem, 1.15rem + 1.45vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.14;
       letter-spacing: -0.025em;
-      line-height: 1.16;
     }
 
     .section-desc {
-      color: var(--ink-secondary);
-      max-width: 54ch;
-      font-size: clamp(0.88rem, 0.85rem + 0.18vw, 0.98rem);
+      max-width: 52ch;
+      color: var(--ink-2);
+      font-size: 0.95rem;
     }
 
-    /* Features Grid */
+    /* Editorial Numbered Feature Grid */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(12px, 2vw, 18px);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
-    .feature-card {
-      position: relative;
-      overflow: hidden;
-      padding: var(--space-card);
+    .feature-item {
+      padding: clamp(18px, 2.4vw, 24px);
       border-radius: var(--radius-lg);
-      background: var(--bg-card);
       border: 1px solid var(--border);
+      background-color: var(--surface);
       display: flex;
-      flex-direction: column;
-      gap: 11px;
-      transition: var(--transition-theme), transform 0.28s var(--ease-out-expo), border-color 0.28s ease;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.14s ease;
     }
 
-    .feature-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0;
-      transition: opacity 0.28s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
+    .feature-item:hover {
       border-color: var(--border-strong);
-      box-shadow: var(--shadow-card);
     }
 
-    .feature-card:hover::before {
-      opacity: 1;
-    }
-
-    .feature-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--accent-soft);
+    .feature-num {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
       color: var(--accent);
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border-strong);
-      transition: transform 0.28s var(--ease-out-expo);
+      background-color: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      border-radius: 8px;
+      padding: 6px 9px;
+      flex-shrink: 0;
+      line-height: 1;
     }
 
-    .feature-card:hover .feature-icon {
-      transform: scale(1.08) rotate(-3deg);
+    .feature-body {
+      min-width: 0;
     }
 
     .feature-title {
       font-family: var(--font-display);
-      font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.14rem);
+      font-size: 1.08rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 6px;
     }
 
-    .feature-text {
-      font-size: clamp(0.86rem, 0.84rem + 0.14vw, 0.93rem);
-      color: var(--ink-secondary);
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--ink-2);
     }
 
-    /* Remote & Technical Specs */
-    .control-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: clamp(14px, 2.2vw, 22px);
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
     }
 
-    .panel-card {
-      padding: var(--space-card);
-      border-radius: var(--radius-xl);
-      background: var(--bg-card);
+    .micro-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 5px;
+      background-color: var(--surface-2);
       border: 1px solid var(--border);
-      min-width: 0;
-      transition: var(--transition-theme);
+      color: var(--ink-2);
     }
 
-    .keymap-list {
-      margin-top: 18px;
+    /* Controls & Technical Specs */
+    .split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: clamp(20px, 2.6vw, 28px);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      min-width: 0;
+    }
+
+    .panel-head-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .keymap-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
     }
 
-    .keymap-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      padding: 12px;
+    .keymap-card {
+      padding: 12px 13px;
       border-radius: var(--radius-md);
-      background: var(--bg-subtle);
       border: 1px solid var(--border);
-      min-width: 0;
-      transition: border-color 0.2s ease, transform 0.2s var(--ease-out-expo);
+      background-color: var(--surface-2);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .keymap-item:hover {
-      border-color: var(--border-strong);
-      transform: translateY(-2px);
-    }
-
-    .key-badge {
-      flex-shrink: 0;
-      padding: 5px 9px;
-      border-radius: 8px;
-      background: var(--bg-card-solid);
-      border: 1px solid var(--border-strong);
-      color: var(--accent);
+    .keycap {
+      align-self: flex-start;
       font-family: var(--font-mono);
       font-size: 0.72rem;
       font-weight: 600;
-      white-space: nowrap;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background-color: var(--bg);
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
     }
 
-    .keymap-desc {
-      font-size: 0.84rem;
-      color: var(--ink-secondary);
-      line-height: 1.38;
-      min-width: 0;
-    }
-
-    .keymap-desc strong {
-      display: block;
+    .keymap-card strong {
+      font-size: 0.9rem;
       color: var(--ink);
-      font-weight: 600;
-      margin-bottom: 2px;
     }
 
-    .info-table {
-      margin-top: 16px;
+    .keymap-card p {
+      font-size: 0.83rem;
+      color: var(--ink-2);
+      line-height: 1.42;
+    }
+
+    .spec-table {
+      margin-top: 12px;
       display: flex;
       flex-direction: column;
     }
 
-    .info-row {
+    .spec-row {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
-      gap: 6px 14px;
-      padding: 11px 0;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
       border-bottom: 1px solid var(--border);
-      font-size: clamp(0.84rem, 0.82rem + 0.1vw, 0.91rem);
+      font-size: 0.88rem;
     }
 
-    .info-row:last-child {
+    .spec-row:last-child {
       border-bottom: none;
     }
 
-    .info-row span:first-child {
-      color: var(--ink-muted);
+    .spec-row span:first-child {
+      color: var(--ink-3);
       font-weight: 500;
     }
 
-    .info-row span:last-child {
-      font-weight: 600;
+    .spec-row span:last-child {
       font-family: var(--font-mono);
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--ink);
       text-align: right;
       overflow-wrap: anywhere;
     }
 
-    /* 16:9 Screenshot Gallery */
-    .gallery-grid {
+    /* Screenshots Gallery (TV & Mobile Tabs) */
+    .gallery-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-grid-tv {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(14px, 2vw, 20px);
+      gap: 16px;
+    }
+
+    .gallery-grid-mobile {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .shot-card {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      transition: var(--transition-theme), transform 0.28s var(--ease-out-expo), border-color 0.25s ease;
-      cursor: pointer;
+      width: 100%;
       text-align: left;
       padding: 0;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      min-width: 0;
-      width: 100%;
+      transition: border-color 0.14s ease;
     }
 
     .shot-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-card);
+      border-color: var(--accent);
     }
 
     .shot-media {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background: var(--bg-subtle);
+      background-color: var(--frame-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
+    }
+
+    .shot-media.tv-ratio {
+      aspect-ratio: 16 / 9;
+    }
+
+    .shot-media.mobile-ratio {
+      aspect-ratio: 9 / 17;
+      padding: 10px;
     }
 
     .shot-media img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      display: block;
-      transition: transform 0.45s var(--ease-out-expo);
-    }
-
-    .shot-card:hover .shot-media img {
-      transform: scale(1.035);
     }
 
     .shot-badge {
       position: absolute;
       top: 10px;
       left: 10px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(6, 10, 18, 0.88);
+      padding: 3px 9px;
+      border-radius: 6px;
+      background-color: rgba(11, 11, 14, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #F8FAFC;
+      color: #F4F4F6;
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.69rem;
       font-weight: 600;
     }
 
-    .shot-caption {
-      padding: clamp(12px, 1.8vw, 16px) clamp(14px, 2vw, 18px);
+    .shot-meta {
+      padding: 13px 15px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 12px;
-      width: 100%;
-      min-width: 0;
-    }
-
-    .shot-caption > div {
-      min-width: 0;
-      flex: 1;
+      gap: 10px;
     }
 
     .shot-title {
       font-weight: 700;
-      font-size: clamp(0.9rem, 0.88rem + 0.12vw, 0.98rem);
+      font-size: 0.92rem;
       color: var(--ink);
     }
 
     .shot-sub {
-      font-size: clamp(0.78rem, 0.76rem + 0.1vw, 0.84rem);
-      color: var(--ink-muted);
+      font-size: 0.81rem;
+      color: var(--ink-2);
       margin-top: 2px;
     }
 
     /* Install Steps */
-    .steps-grid {
+    .install-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(12px, 2vw, 18px);
+      gap: 14px;
     }
 
     .step-card {
-      padding: var(--space-card);
+      padding: clamp(18px, 2.4vw, 24px);
       border-radius: var(--radius-lg);
-      background: var(--bg-card);
       border: 1px solid var(--border);
-      transition: var(--transition-theme), transform 0.25s var(--ease-out-expo), border-color 0.25s ease;
-    }
-
-    .step-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--border-strong);
+      background-color: var(--surface);
     }
 
     .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      border: 1px solid var(--border-strong);
-      color: var(--accent);
+      display: inline-block;
       font-family: var(--font-mono);
-      font-weight: 700;
-      font-size: 0.86rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 4px 9px;
+      border-radius: 7px;
       margin-bottom: 12px;
     }
 
     .step-card h3 {
       font-family: var(--font-display);
-      font-size: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+      font-size: 1.06rem;
+      font-weight: 700;
       margin-bottom: 6px;
     }
 
     .step-card p {
-      font-size: clamp(0.85rem, 0.83rem + 0.12vw, 0.91rem);
-      color: var(--ink-secondary);
+      font-size: 0.89rem;
+      color: var(--ink-2);
     }
 
-    /* Developer Card */
+    /* Developer & Community Card */
     .dev-card {
-      padding: clamp(22px, 3.5vw, 36px);
+      padding: clamp(22px, 3.2vw, 34px);
       border-radius: var(--radius-xl);
-      background: var(--bg-card);
       border: 1px solid var(--border);
+      background-color: var(--surface);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      box-shadow: var(--shadow-card);
-      transition: var(--transition-theme);
+      gap: 22px;
     }
 
-    .dev-meta {
+    .dev-info {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 6px;
       min-width: 0;
     }
 
-    .dev-company-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid var(--border-strong);
+    .dev-org {
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--accent-border);
       color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 700;
     }
 
     .dev-name {
       font-family: var(--font-display);
-      font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.7rem);
-      font-weight: 700;
+      font-size: clamp(1.38rem, 1.15rem + 0.8vw, 1.75rem);
+      font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     .dev-role {
-      color: var(--ink-secondary);
-      font-size: clamp(0.88rem, 0.85rem + 0.15vw, 0.96rem);
+      color: var(--ink-2);
+      font-size: 0.92rem;
     }
 
     .dev-actions {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 10px;
+    }
+
+    .btn-telegram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background-color: var(--telegram);
+      color: var(--telegram-ink);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .btn-telegram:hover {
+      filter: brightness(1.06);
     }
 
     .btn-whatsapp {
@@ -1188,46 +1103,41 @@
       justify-content: center;
       gap: 9px;
       padding: 12px 18px;
-      border-radius: 13px;
-      background: #10B981;
-      color: #032219;
+      border-radius: 10px;
+      background-color: var(--whatsapp);
+      color: var(--whatsapp-ink);
       font-weight: 700;
-      font-size: clamp(0.86rem, 0.84rem + 0.12vw, 0.94rem);
-      box-shadow: 0 12px 28px -10px rgba(16, 185, 129, 0.45);
-      transition: transform 0.2s var(--ease-out-expo), filter 0.2s ease;
+      font-size: 0.9rem;
     }
 
     .btn-whatsapp:hover {
-      transform: translateY(-2px);
       filter: brightness(1.06);
     }
 
-    .btn-copy-phone {
+    .btn-copy {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 16px;
-      border-radius: 13px;
-      border: 1px solid var(--border);
-      background: var(--bg-subtle);
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background-color: var(--surface-2);
       color: var(--ink);
       font-family: var(--font-mono);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      transition: border-color 0.2s ease, transform 0.2s var(--ease-out-expo);
     }
 
-    .btn-copy-phone:hover {
-      border-color: var(--border-strong);
-      transform: translateY(-2px);
+    .btn-copy:hover {
+      border-color: var(--accent);
     }
 
     /* Footer */
     .footer {
-      padding: clamp(24px, 3vw, 34px) 0 clamp(32px, 4vw, 48px);
+      padding: 26px 0 38px;
       border-top: 1px solid var(--border);
-      color: var(--ink-muted);
+      color: var(--ink-3);
       font-size: 0.84rem;
     }
 
@@ -1236,89 +1146,68 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 10px 18px;
+      gap: 12px 20px;
     }
 
-    /* Back to Top Floating Button */
-    .back-to-top {
-      position: fixed;
-      right: 18px;
-      bottom: 20px;
-      z-index: 40;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--border-strong);
-      background: var(--bg-card-solid);
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      color: var(--ink-2);
+    }
+
+    .footer-links a:hover {
       color: var(--accent);
-      display: grid;
-      place-items: center;
-      box-shadow: var(--shadow-card);
-      opacity: 0;
-      transform: translateY(14px) scale(0.9);
-      pointer-events: none;
-      transition: opacity 0.25s ease, transform 0.25s var(--ease-out-expo);
     }
 
-    .back-to-top.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-3px) scale(1.05);
-    }
-
-    /* Lightbox Modal */
+    /* Static Lightbox (Zero Motion Jank) */
     .lightbox {
       position: fixed;
       inset: 0;
       z-index: 80;
-      background: rgba(3, 6, 12, 0.94);
-      display: flex;
+      background-color: rgba(7, 7, 10, 0.95);
+      display: none;
       align-items: center;
       justify-content: center;
-      padding: clamp(12px, 3vw, 24px);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
+      padding: clamp(14px, 3vw, 28px);
     }
 
     .lightbox.open {
-      opacity: 1;
-      visibility: visible;
+      display: flex;
     }
 
-    .lightbox-inner {
+    .lightbox-box {
       width: min(1040px, 100%);
+      max-height: 92vh;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      transform: scale(0.96);
-      transition: transform 0.28s var(--ease-out-expo);
     }
 
-    .lightbox.open .lightbox-inner {
-      transform: scale(1);
-    }
-
-    .lightbox-frame {
+    .lightbox-stage {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: clamp(10px, 2vw, 16px);
+      height: min(72vh, 620px);
+      border-radius: 12px;
+      border: 1px solid #2A2A35;
+      background-color: #050507;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
       overflow: hidden;
-      background: #000;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.78);
-      touch-action: pan-y;
     }
 
-    .lightbox-frame img {
-      width: 100%;
-      height: 100%;
+    .lightbox-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
       object-fit: contain;
-      display: block;
     }
 
     .lightbox-bar {
@@ -1327,212 +1216,165 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      color: #F8FAFC;
-    }
-
-    .lightbox-caption {
-      min-width: 0;
-      flex: 1 1 260px;
+      color: #F4F4F6;
     }
 
     .lightbox-caption h4 {
       font-family: var(--font-display);
-      font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+      font-size: 1rem;
     }
 
     .lightbox-caption p {
-      font-size: clamp(0.8rem, 1.1vw, 0.87rem);
-      color: #94A3B8;
+      font-size: 0.84rem;
+      color: #A6A6B4;
     }
 
-    .lightbox-controls {
+    .lightbox-actions {
       display: flex;
-      align-items: center;
       gap: 8px;
       flex-shrink: 0;
     }
 
     .lb-btn {
-      height: 38px;
+      height: 36px;
       padding: 0 13px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      border: 1px solid #383846;
+      background-color: #1A1A22;
       color: #FFFFFF;
+      font-size: 0.83rem;
       font-weight: 600;
-      font-size: 0.84rem;
-      transition: background 0.18s ease;
     }
 
     .lb-btn:hover {
-      background: rgba(0, 210, 255, 0.3);
+      border-color: var(--accent);
     }
 
     /* Toast */
     .toast {
       position: fixed;
-      bottom: 22px;
       left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
       z-index: 90;
-      max-width: calc(100vw - 32px);
-      padding: 11px 18px;
-      border-radius: 12px;
-      background: var(--bg-card-solid);
-      border: 1px solid var(--border-strong);
+      padding: 10px 16px;
+      border-radius: 9px;
+      border: 1px solid var(--accent-border);
+      background-color: var(--surface);
       color: var(--ink);
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      box-shadow: var(--shadow-card);
-      opacity: 0;
-      transform: translate(-50%, 14px);
-      pointer-events: none;
-      transition: opacity 0.22s ease, transform 0.22s var(--ease-out-expo);
-      text-align: center;
+      display: none;
     }
 
     .toast.show {
-      opacity: 1;
-      transform: translate(-50%, 0);
+      display: block;
     }
 
-    /* Responsive Breakpoints */
+    /* Responsive */
     @media (max-width: 1024px) {
       .hero-grid,
-      .control-panel {
+      .split-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-      .features-grid,
-      .steps-grid {
+      .install-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 860px) {
       .nav-links {
         display: none;
       }
       .menu-btn {
-        display: grid;
+        display: inline-flex;
       }
-      .mobile-drawer {
-        display: block;
+      .features-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .gallery-grid-mobile {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 640px) {
-      .spec-strip {
+      .metrics-strip {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .features-grid,
-      .gallery-grid,
-      .steps-grid,
-      .keymap-list {
+      .keymap-grid,
+      .gallery-grid-tv,
+      .install-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-      .tv-thumb-strip {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .nav-cta span {
+      .nav-cta span,
+      .theme-label-text {
         display: none;
       }
       .nav-cta {
         padding: 0 11px;
       }
-      .theme-label-text {
-        display: none;
-      }
-      .theme-toggle {
-        padding: 0 10px;
-      }
       .dev-actions {
         width: 100%;
       }
+      .btn-telegram,
       .btn-whatsapp,
-      .btn-copy-phone {
+      .btn-copy {
         flex: 1 1 200px;
-      }
-      .back-to-top {
-        right: 14px;
-        bottom: 14px;
-        width: 40px;
-        height: 40px;
       }
     }
 
     @media (max-width: 460px) {
-      .hero-cta-group > a {
+      .cta-row > a {
         width: 100%;
       }
-      .mobile-drawer-links {
+      .mobile-drawer-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-      .info-row {
+      .spec-row {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 2px;
       }
-      .info-row span:last-child {
+      .spec-row span:last-child {
         text-align: left;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .hero-anim,
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <div class="ambient-layer" aria-hidden="true">
-    <div class="studio-grid"></div>
-    <div class="orb orb-primary"></div>
-    <div class="orb orb-secondary"></div>
-  </div>
-
-  <!-- Top Navigation -->
+  <!-- Header -->
   <header class="navbar">
     <div class="container">
       <div class="navbar-inner">
         <a href="#top" class="brand">
-          <div class="brand-logo-wrap" id="navLogoWrap">
-            <img id="navLogoImg" src="https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png" alt="SS TV Logo" width="24" height="24" />
+          <div class="brand-icon">
+            <img src="https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png" alt="SS TV Logo" width="38" height="38" />
           </div>
-          <div class="brand-text">
-            <div class="brand-name">SS <span class="accent">TV</span></div>
+          <div class="brand-meta">
+            <div class="brand-name">SS <span>TV</span></div>
             <div class="brand-sub">by SS Tech Zone</div>
           </div>
         </a>
 
         <nav class="nav-links" aria-label="Primary">
           <a href="#features">Features</a>
-          <a href="#controls">Remote &amp; Specs</a>
+          <a href="#controls">Controls &amp; Specs</a>
           <a href="#screenshots">Screenshots</a>
-          <a href="#install">How to Install</a>
-          <a href="#developer">Developer</a>
+          <a href="#install">Install</a>
+          <a href="#developer">Community</a>
         </nav>
 
         <div class="nav-actions">
-          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+          <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme">
             <span id="themeIcon" aria-hidden="true"></span>
             <span class="theme-label-text" id="themeLabel">Light</span>
           </button>
-          <a href="#download" class="nav-cta" id="navDownloadLink" aria-label="Get SS TV APK">
+          <a href="#download" class="nav-cta" id="navDownloadLink" aria-label="Download SS TV APK">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M12 4V16M12 16L7 11M12 16L17 11M5 20H19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <span>Get APK</span>
           </a>
-          <button type="button" class="menu-btn" id="menuToggleBtn" aria-label="Open navigation menu" aria-expanded="false">
+          <button type="button" class="icon-btn menu-btn" id="menuToggleBtn" aria-label="Open menu" aria-expanded="false">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
@@ -1541,12 +1383,12 @@
       </div>
 
       <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
-        <div class="mobile-drawer-links">
+        <div class="mobile-drawer-grid">
           <a href="#features">Features</a>
-          <a href="#controls">Remote &amp; Specs</a>
+          <a href="#controls">Controls &amp; Specs</a>
           <a href="#screenshots">Screenshots</a>
-          <a href="#install">How to Install</a>
-          <a href="#developer">Developer</a>
+          <a href="#install">Install</a>
+          <a href="#developer">Community</a>
         </div>
       </nav>
     </div>
@@ -1557,261 +1399,295 @@
     <section class="hero" id="download">
       <div class="container hero-grid">
         <div>
-          <div class="hero-kicker-row hero-anim hero-delay-1">
-            <span class="live-pill"><span class="live-dot"></span>Live Television</span>
-            <span class="version-pill" id="heroVersionBadge"><span class="skeleton-shimmer"></span></span>
+          <div class="status-row">
+            <span class="tag-pill tag-live"><span class="live-dot"></span>Live TV</span>
+            <span class="tag-pill tag-version" id="heroVersionBadge">Loading...</span>
+            <span class="tag-pill tag-platform">Android TV &amp; Mobile</span>
           </div>
 
-          <div class="hero-identity hero-anim hero-delay-2">
-            <div class="hero-app-icon" id="heroLogoWrap">
-              <img id="heroLogoImg" src="https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png" alt="SS TV App Icon" width="36" height="36" />
+          <div class="hero-head">
+            <div class="hero-app-icon">
+              <img src="https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png" alt="SS TV App Icon" width="68" height="68" />
             </div>
             <h1 class="hero-title">
-              SS <span class="accent">TV</span><br />
-              Built for the Big Screen.
+              SS <span>TV</span><br />
+              One App. TV &amp; Mobile.
             </h1>
           </div>
 
-          <p class="hero-subtitle hero-anim hero-delay-3">
-            A fast, distraction-free live TV streaming experience engineered exclusively for Android TV &amp; Google TV remotes. Instant channel zapping, smart stream failover, voice search, and 10 cinematic frosted-glass themes.
+          <p class="hero-lead">
+            A dedicated live television player built by SS Tech Zone for both Android phones and Android TV / Google TV boxes. Automatic stream failover, Media3 ExoPlayer controls, Picture-in-Picture on mobile, lightweight zero-lag D-pad navigation on TV, and 11 dark-room themes in one single APK.
           </p>
 
-          <div class="hero-cta-group hero-anim hero-delay-4">
-            <a href="#" class="btn-download is-loading" id="primaryDownloadBtn" rel="noopener">
-              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3V15M12 15L7 10M12 15L17 10M4 19H20" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+          <div class="cta-row">
+            <a href="#" class="btn-primary is-loading" id="primaryDownloadBtn" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3V15M12 15L7 10M12 15L17 10M4 19H20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <div class="btn-download-meta">
+              <div class="btn-primary-text">
                 <span>Download SS TV APK</span>
-                <span class="btn-download-sub" id="downloadBtnSub">Fetching latest release...</span>
+                <span class="btn-primary-sub" id="downloadBtnSub">Checking latest release...</span>
               </div>
             </a>
 
-            <a href="#screenshots" class="btn-secondary">
+            <a href="https://t.me/sstv_sstech" target="_blank" rel="noopener noreferrer" class="btn-outline">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="2" y="5" width="20" height="14" rx="2.5" stroke="currentColor" stroke-width="2" />
-                <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V19L12.2 15.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              Explore TV UI
+              Telegram Channel
             </a>
           </div>
 
-          <div class="spec-strip hero-anim hero-delay-5">
-            <div class="spec-cell">
-              <div class="spec-label">Version</div>
-              <div class="spec-value" id="specVersion"><span class="skeleton-shimmer"></span></div>
+          <div class="metrics-strip">
+            <div class="metric-cell">
+              <div class="metric-label">Version</div>
+              <div class="metric-val" id="specVersion">...</div>
             </div>
-            <div class="spec-cell">
-              <div class="spec-label">APK Size</div>
-              <div class="spec-value" id="specSize"><span class="skeleton-shimmer"></span></div>
+            <div class="metric-cell">
+              <div class="metric-label">APK Size</div>
+              <div class="metric-val" id="specSize">...</div>
             </div>
-            <div class="spec-cell">
-              <div class="spec-label">Android TV</div>
-              <div class="spec-value">7.0+ (API 24)</div>
+            <div class="metric-cell">
+              <div class="metric-label">Android OS</div>
+              <div class="metric-val">6.0+ (API 23)</div>
             </div>
-            <div class="spec-cell">
-              <div class="spec-label">Publisher</div>
-              <div class="spec-value">SS Tech Zone</div>
+            <div class="metric-cell">
+              <div class="metric-label">Devices</div>
+              <div class="metric-val">TV &amp; Phone</div>
             </div>
           </div>
         </div>
 
-        <!-- Interactive 16:9 Screenshot Slider (screenshots already include TV frame) -->
-        <div class="tv-showcase hero-anim hero-delay-tv">
-          <div class="tv-screen" id="heroTvScreen" role="button" tabindex="0" aria-label="View full-size screenshot">
-            <div class="tv-slides-track" id="heroSlidesTrack"></div>
+        <!-- Static Interactive Previewer (User-controlled, NO auto-sliding or slide animation) -->
+        <div class="preview-shell">
+          <div class="preview-bar">
+            <div class="segmented" role="tablist" aria-label="Select device preview">
+              <button type="button" class="seg-btn active" id="heroTabTv" role="tab" aria-selected="true">
+                Android TV (7)
+              </button>
+              <button type="button" class="seg-btn" id="heroTabMobile" role="tab" aria-selected="false">
+                Mobile (6)
+              </button>
+            </div>
+            <span class="preview-counter" id="heroPreviewCounter">01 / 07</span>
           </div>
-          <div class="tv-thumb-strip" id="heroThumbStrip" aria-label="TV Screenshot Selector"></div>
+
+          <div class="preview-stage" id="heroPreviewStage" role="button" tabindex="0" aria-label="Open full-size screenshot">
+            <img id="heroPreviewImg" src="" alt="" decoding="async" />
+          </div>
+
+          <div class="preview-footer">
+            <div class="preview-caption">
+              <div class="preview-caption-title" id="heroPreviewTitle"></div>
+              <div class="preview-caption-sub" id="heroPreviewDesc"></div>
+            </div>
+            <div class="preview-nav-btns">
+              <button type="button" class="mini-btn" id="heroPrevBtn" aria-label="Previous screenshot">&#8592; Prev</button>
+              <button type="button" class="mini-btn" id="heroNextBtn" aria-label="Next screenshot">Next &#8594;</button>
+            </div>
+          </div>
+
+          <div class="thumb-strip" id="heroThumbStrip" aria-label="Select screenshot"></div>
         </div>
       </div>
     </section>
 
-    <!-- Core Features -->
+    <!-- Verified Real Features -->
     <section class="section" id="features">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-head">
           <div>
-            <div class="section-eyebrow">Capabilities</div>
-            <h2 class="section-title">Designed for Effortless Living-Room Viewing</h2>
+            <div class="eyebrow">Real Capabilities</div>
+            <h2 class="section-title">What SS TV Actually Delivers</h2>
           </div>
           <p class="section-desc">
-            Every interaction in SS TV is tuned for D-pad focus, crisp 10-foot legibility, and rock-solid live HLS/DASH playback.
+            Every feature below is built directly into the app—tailored separately for touchscreens on mobile and D-pad remotes on Android TV.
           </p>
         </div>
 
         <div class="features-grid">
-          <article class="feature-card reveal" data-delay="0">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M13 2L4 14H11L10 22L20 10H13L13 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-              </svg>
+          <article class="feature-item">
+            <span class="feature-num">01</span>
+            <div class="feature-body">
+              <h3 class="feature-title">Adaptive Android TV &amp; Mobile Interfaces</h3>
+              <p class="feature-desc">
+                One APK automatically detects your device. On phones and tablets you get bottom tab navigation, a Home featured most-watched banner, Continue Watching, and multi-column touch grids. On Android TV, SS TV switches to a left sidebar rail with remembered D-pad focus and disables heavy animations and gradients so even older TV boxes stay fast and responsive.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">Auto TV Detection</span>
+                <span class="micro-tag">Zero-Animation TV Mode</span>
+                <span class="micro-tag">Continue Watching</span>
+              </div>
             </div>
-            <h3 class="feature-title">Smart Stream Auto-Failover</h3>
-            <p class="feature-text">
-              When a live stream stalls or drops, the player automatically recovers or rolls over to backup stream sources within your configured timeout window.
-            </p>
           </article>
 
-          <article class="feature-card reveal" data-delay="60">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 15C13.66 15 15 13.66 15 12V6C15 4.34 13.66 3 12 3C10.34 3 9 4.34 9 6V12C9 13.66 10.34 15 12 15Z" stroke="currentColor" stroke-width="2" />
-                <path d="M19 11V12C19 15.87 15.87 19 12 19M5 11V12C5 15.87 8.13 19 12 19M12 19V22M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
+          <article class="feature-item">
+            <span class="feature-num">02</span>
+            <div class="feature-body">
+              <h3 class="feature-title">Smart Stream Auto-Failover &amp; Auto-Reconnect</h3>
+              <p class="feature-desc">
+                Powered by AndroidX Media3 ExoPlayer for HLS and DASH live streams. If a broadcast source stalls or drops, SS TV automatically rolls over to backup stream URLs within your chosen failover timeout (5s, 10s, 15s, or 20s) and automatically resumes live playback when your internet connection returns.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">HLS &amp; DASH</span>
+                <span class="micro-tag">5s–20s Failover</span>
+                <span class="micro-tag">Offline Reconnect</span>
+              </div>
             </div>
-            <h3 class="feature-title">TV Voice &amp; System Search</h3>
-            <p class="feature-text">
-              Press the Search button or say a channel name into the Voice Search overlay to filter the grid or tune straight into an exact channel match.
-            </p>
           </article>
 
-          <article class="feature-card reveal" data-delay="120">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" />
-                <path d="M8 9H16M8 13H13M8 17H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
+          <article class="feature-item">
+            <span class="feature-num">03</span>
+            <div class="feature-body">
+              <h3 class="feature-title">Quality Picker, Aspect Ratio &amp; Decoder Engine</h3>
+              <p class="feature-desc">
+                Switch between Auto or specific stream resolutions whenever multi-bitrate variants exist. Fine-tune playback with Fit / Fill / Zoom scaling, three buffer presets (Fast Zapping, Balanced, High Stability Anti-Freeze), Hardware or Software decoder modes, and one-tap stream Reload right inside the player.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">Quality Selector</span>
+                <span class="micro-tag">Fit / Fill / Zoom</span>
+                <span class="micro-tag">HW / SW Decoder</span>
+              </div>
             </div>
-            <h3 class="feature-title">Overlay Mini Channel List</h3>
-            <p class="feature-text">
-              Press Up or Down while watching to summon a sleek floating channel drawer with instant numbered selection without leaving your live stream.
-            </p>
           </article>
 
-          <article class="feature-card reveal" data-delay="180">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
-                <path d="M12 3A9 9 0 0 1 21 12H12V3Z" fill="currentColor" opacity="0.35" />
-                <circle cx="12" cy="12" r="3" fill="currentColor" />
-              </svg>
+          <article class="feature-item">
+            <span class="feature-num">04</span>
+            <div class="feature-body">
+              <h3 class="feature-title">Mobile Gestures, Screen Lock &amp; Picture-in-Picture</h3>
+              <p class="feature-desc">
+                Watch in portrait while browsing more channels underneath, or toggle fullscreen landscape without reloading the stream. Swipe left or right to zap channels, slide the left edge for independent video brightness or the right edge for volume, lock screen touches, or pop the stream into floating Picture-in-Picture (Android 8.0+).
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">PiP Mode</span>
+                <span class="micro-tag">Swipe Zap / Vol / Bright</span>
+                <span class="micro-tag">Screen Lock</span>
+              </div>
             </div>
-            <h3 class="feature-title">10 Cinematic App Themes</h3>
-            <p class="feature-text">
-              Personalize your TV experience with 10 calibrated dark-room color palettes—from Cyan Abyss and Emerald Broadcast to Royal Amethyst.
-            </p>
           </article>
 
-          <article class="feature-card reveal" data-delay="240">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <circle cx="9" cy="7" r="2" fill="var(--bg-canvas)" stroke="currentColor" stroke-width="2" />
-                <circle cx="15" cy="12" r="2" fill="var(--bg-canvas)" stroke="currentColor" stroke-width="2" />
-                <circle cx="11" cy="17" r="2" fill="var(--bg-canvas)" stroke="currentColor" stroke-width="2" />
-              </svg>
+          <article class="feature-item">
+            <span class="feature-num">05</span>
+            <div class="feature-body">
+              <h3 class="feature-title">TV Cinema Control HUD &amp; In-Player Browse Shelf</h3>
+              <p class="feature-desc">
+                While watching on TV, press OK to open the bottom control bar with Favorite, Stream Quality, Aspect Ratio, Channels, and Reload buttons. Press Down to bring up the categorized Channel Browse Shelf over live video, or type digits 0–9 on your remote to jump directly to any channel number.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">0–9 Number Tune</span>
+                <span class="micro-tag">Categorized Shelf</span>
+                <span class="micro-tag">CH+ / CH− Zap</span>
+              </div>
             </div>
-            <h3 class="feature-title">Pro Playback &amp; Decoder Engine</h3>
-            <p class="feature-text">
-              Powered by AndroidX Media3 ExoPlayer with selectable Fit/Fill/Zoom aspect ratios, buffer presets, Hardware/Software decoding, and launch auto-play.
-            </p>
           </article>
 
-          <article class="feature-card reveal" data-delay="300">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3V13M12 13L8.5 9.5M12 13L15.5 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4 15V18C4 19.66 5.34 21 7 21H17C18.66 21 20 19.66 20 18V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
+          <article class="feature-item">
+            <span class="feature-num">06</span>
+            <div class="feature-body">
+              <h3 class="feature-title">Favorites, Custom Arrange &amp; Startup Behavior</h3>
+              <p class="feature-desc">
+                Long-press any channel card (or hold OK on TV) to save it to Favorites without interrupting browsing. Reorder your Favorite channels using drag-and-drop on mobile or D-pad grab/move/drop on TV. Enable Auto-Play Last Channel, Open Favorites on Startup, or per-category channel numbering from 1.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">Custom Favorite Order</span>
+                <span class="micro-tag">Auto-Play Last</span>
+                <span class="micro-tag">Category Numbering</span>
+              </div>
             </div>
-            <h3 class="feature-title">Built-in Live OTA Updates</h3>
-            <p class="feature-text">
-              Automatically checks for new SS TV releases on launch and downloads updates directly inside the TV interface with real-time progress tracking.
-            </p>
+          </article>
+
+          <article class="feature-item">
+            <span class="feature-num">07</span>
+            <div class="feature-body">
+              <h3 class="feature-title">Live Text Search &amp; Voice Search</h3>
+              <p class="feature-desc">
+                Find channels instantly by name or category from the dedicated Search tab, or trigger the built-in Voice Search overlay to speak a channel name and jump straight to the match without typing on a TV remote.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">Instant Filter</span>
+                <span class="micro-tag">Voice Recognition</span>
+                <span class="micro-tag">Category Match</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span class="feature-num">08</span>
+            <div class="feature-body">
+              <h3 class="feature-title">11 Themes, Private PIN Channels &amp; In-App Updates</h3>
+              <p class="feature-desc">
+                Personalize SS TV with 11 dark-room color palettes—including Crimson Velvet, Electric Cyan, Liquid Glass, Royal Amethyst, and Emerald Pulse. Optionally unlock PIN-protected private channels with a 4-digit keypad, and receive official app updates directly inside the app with live download progress.
+              </p>
+              <div class="feature-tags">
+                <span class="micro-tag">11 Color Themes</span>
+                <span class="micro-tag">4-Digit Private PIN</span>
+                <span class="micro-tag">In-App OTA Updater</span>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Remote Control Keymap & Technical Specs -->
+    <!-- Controls & Technical Specs -->
     <section class="section" id="controls">
-      <div class="container control-panel">
-        <div class="panel-card reveal" data-delay="0">
-          <div class="section-eyebrow">TV Remote Ergonomics</div>
-          <h2 class="section-title">Instant D-Pad &amp; Number Control</h2>
-          <p class="section-desc" style="margin-top: 8px;">
-            Navigate smoothly across rows with edge wrapping, zap channels in one click, or type a channel number directly.
-          </p>
-
-          <div class="keymap-list">
-            <div class="keymap-item">
-              <span class="key-badge">LEFT / RIGHT</span>
-              <div class="keymap-desc">
-                <strong>Zap Channels</strong>
-                Switch immediately to previous or next live channel during playback.
-              </div>
+      <div class="container split-grid">
+        <div class="panel">
+          <div class="panel-head-row">
+            <div>
+              <div class="eyebrow">Ergonomics</div>
+              <h2 class="section-title">Player &amp; App Controls</h2>
             </div>
-            <div class="keymap-item">
-              <span class="key-badge">UP / DOWN</span>
-              <div class="keymap-desc">
-                <strong>Mini Channel List</strong>
-                Open the right-side channel list while watching live TV.
-              </div>
-            </div>
-            <div class="keymap-item">
-              <span class="key-badge">0 – 9 KEYS</span>
-              <div class="keymap-desc">
-                <strong>Direct Channel Tune</strong>
-                Type any channel number to jump right to that broadcast.
-              </div>
-            </div>
-            <div class="keymap-item">
-              <span class="key-badge">OK / CENTER</span>
-              <div class="keymap-desc">
-                <strong>OSD Channel Badge</strong>
-                Reveal current numbered channel name overlay at any time.
-              </div>
-            </div>
-            <div class="keymap-item">
-              <span class="key-badge">MIC / SEARCH</span>
-              <div class="keymap-desc">
-                <strong>Voice Search</strong>
-                Open voice recognition to find and play channels hands-free.
-              </div>
-            </div>
-            <div class="keymap-item">
-              <span class="key-badge">MENU / GEAR</span>
-              <div class="keymap-desc">
-                <strong>TV Settings</strong>
-                Configure themes, buffer mode, decoder, failover, and reload channels.
-              </div>
+            <div class="segmented" role="tablist" aria-label="Choose control scheme">
+              <button type="button" class="seg-btn active" id="ctrlTabTv" role="tab" aria-selected="true">TV Remote</button>
+              <button type="button" class="seg-btn" id="ctrlTabMobile" role="tab" aria-selected="false">Mobile Touch</button>
             </div>
           </div>
+
+          <div class="keymap-grid" id="controlsGrid"></div>
         </div>
 
-        <div class="panel-card reveal" data-delay="100">
-          <div class="section-eyebrow">Package Details</div>
-          <h2 class="section-title">Release Specifications</h2>
-          <div class="info-table">
-            <div class="info-row">
-              <span>Application Name</span>
+        <div class="panel">
+          <div class="eyebrow">Package Info</div>
+          <h2 class="section-title">Technical Specs</h2>
+          <div class="spec-table">
+            <div class="spec-row">
+              <span>App Name</span>
               <span>SS TV</span>
             </div>
-            <div class="info-row">
+            <div class="spec-row">
               <span>Package ID</span>
               <span>com.sstechzone.sstv</span>
             </div>
-            <div class="info-row">
-              <span>Latest Version</span>
+            <div class="spec-row">
+              <span>Latest Release</span>
               <span id="tableVersion">Loading...</span>
             </div>
-            <div class="info-row">
-              <span>APK File Size</span>
-              <span id="tableSize">Calculating...</span>
+            <div class="spec-row">
+              <span>APK Size</span>
+              <span id="tableSize">Checking...</span>
             </div>
-            <div class="info-row">
-              <span>Minimum OS</span>
-              <span>Android 7.0 (API 24)</span>
+            <div class="spec-row">
+              <span>Supported Devices</span>
+              <span>Android Phone, Tablet &amp; TV</span>
             </div>
-            <div class="info-row">
+            <div class="spec-row">
+              <span>Minimum Android</span>
+              <span>Android 6.0 (API 23)</span>
+            </div>
+            <div class="spec-row">
               <span>Target SDK</span>
               <span>Android 16 (API 36)</span>
             </div>
-            <div class="info-row">
-              <span>Streaming Engine</span>
+            <div class="spec-row">
+              <span>Player Engine</span>
               <span>Media3 ExoPlayer (HLS / DASH)</span>
             </div>
-            <div class="info-row">
+            <div class="spec-row">
+              <span>Themes</span>
+              <span>11 Dark-Room Palettes</span>
+            </div>
+            <div class="spec-row">
               <span>Publisher</span>
               <span>SS Tech Zone</span>
             </div>
@@ -1820,90 +1696,107 @@
       </div>
     </section>
 
-    <!-- 16:9 TV Screenshots -->
+    <!-- Full Screenshots Gallery (TV & Mobile) -->
     <section class="section" id="screenshots">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-head">
           <div>
-            <div class="section-eyebrow">16:9 TV Capture Gallery</div>
-            <h2 class="section-title">Inside the SS TV Interface</h2>
+            <div class="eyebrow">Real App Captures</div>
+            <h2 class="section-title">TV &amp; Mobile Screenshots</h2>
           </div>
           <p class="section-desc">
-            Actual screenshots captured straight from Android TV in native 16:9 widescreen aspect ratio. Tap any screen to inspect full-size.
+            Switch between Android TV widescreen captures and Android Mobile screens. Click any screenshot to inspect it full-size.
           </p>
         </div>
 
-        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="gallery-toolbar">
+          <div class="segmented" role="tablist" aria-label="Screenshot platform filter">
+            <button type="button" class="seg-btn active" id="galTabTv" role="tab" aria-selected="true">
+              Android TV (7)
+            </button>
+            <button type="button" class="seg-btn" id="galTabMobile" role="tab" aria-selected="false">
+              Mobile (6)
+            </button>
+          </div>
+          <span class="preview-counter" id="galleryHint">Showing Android TV interface (16:9)</span>
+        </div>
+
+        <div id="galleryContainer" class="gallery-grid-tv"></div>
       </div>
     </section>
 
     <!-- Install Guide -->
     <section class="section" id="install">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-head">
           <div>
-            <div class="section-eyebrow">Quick Setup</div>
-            <h2 class="section-title">Install on Your Android TV in 3 Steps</h2>
+            <div class="eyebrow">Quick Setup</div>
+            <h2 class="section-title">Install on Mobile or Android TV</h2>
           </div>
         </div>
 
-        <div class="steps-grid">
-          <div class="step-card reveal" data-delay="0">
-            <div class="step-num">01</div>
-            <h3>Download the Latest APK</h3>
+        <div class="install-grid">
+          <div class="step-card">
+            <span class="step-num">STEP 01</span>
+            <h3>Download Official APK</h3>
             <p>
-              Tap the Download SS TV APK button above on your phone, PC, or directly inside your TV browser to fetch the official release build.
+              Tap <strong>Download SS TV APK</strong> above on your Android phone, PC, or TV browser to get the latest signed release from SS Tech Zone.
             </p>
           </div>
-          <div class="step-card reveal" data-delay="80">
-            <div class="step-num">02</div>
-            <h3>Transfer to Android TV</h3>
+          <div class="step-card">
+            <span class="step-num">STEP 02</span>
+            <h3>On Phone or Send to TV</h3>
             <p>
-              If downloaded on your phone, send the APK to your TV using <em>Send Files to TV</em>, a USB drive, or any local file manager.
+              On mobile, open the downloaded APK directly. For Android TV, transfer the APK using <em>Send Files to TV</em>, a USB drive, or a TV file manager.
             </p>
           </div>
-          <div class="step-card reveal" data-delay="160">
-            <div class="step-num">03</div>
-            <h3>Install &amp; Start Watching</h3>
+          <div class="step-card">
+            <span class="step-num">STEP 03</span>
+            <h3>Install &amp; Watch Live</h3>
             <p>
-              Open the APK on your TV, allow installation from your file manager if prompted, and launch SS TV from the Android TV home banner.
+              Allow installation from unknown sources if prompted, install SS TV, and launch—the app automatically loads the right interface for your phone or TV.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Developer & Company Info -->
+    <!-- Developer & Community -->
     <section class="section" id="developer">
       <div class="container">
-        <div class="dev-card reveal">
-          <div class="dev-meta">
-            <span class="dev-company-tag">SS Tech Zone</span>
+        <div class="dev-card">
+          <div class="dev-info">
+            <span class="dev-org">SS Tech Zone</span>
             <h2 class="dev-name">Md Sagor Mia</h2>
-            <p class="dev-role">
-              Creator &amp; Lead Android Developer · SS TV &amp; SS Tech Zone
-            </p>
+            <p class="dev-role">Creator &amp; Lead Android Developer · Official updates, notices, and direct support.</p>
           </div>
 
           <div class="dev-actions">
+            <a
+              href="https://t.me/sstv_sstech"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-telegram"
+            >
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V19L12.2 15.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Join Telegram Channel
+            </a>
+
             <a
               href="https://wa.me/8801772661151"
               target="_blank"
               rel="noopener noreferrer"
               class="btn-whatsapp"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M20 11.5C20 16.19 16.19 20 11.5 20C10.03 20 8.65 19.62 7.45 18.96L3 20L4.1 15.72C3.4 14.48 3 13.04 3 11.5C3 6.81 6.81 3 11.5 3C16.19 3 20 6.81 20 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-                <path d="M9.5 8.8C9.3 8.4 9.05 8.4 8.85 8.4H8.3C8.1 8.4 7.75 8.5 7.5 8.8C7.25 9.1 6.6 9.7 6.6 10.95C6.6 12.2 7.52 13.4 7.65 13.58C7.78 13.75 9.45 16.35 12.05 17.35C14.2 18.18 14.65 18 15.1 17.95C15.55 17.9 16.55 17.35 16.75 16.78C16.95 16.2 16.95 15.7 16.88 15.58C16.82 15.46 16.62 15.38 16.35 15.25C16.08 15.12 14.75 14.46 14.5 14.37C14.25 14.28 14.08 14.24 13.9 14.5C13.72 14.76 13.2 15.38 13.04 15.56C12.88 15.74 12.72 15.76 12.45 15.63C12.18 15.5 11.32 15.21 10.3 14.3C9.5 13.58 8.96 12.7 8.8 12.43C8.64 12.16 8.78 12.01 8.92 11.88C9.04 11.76 9.19 11.56 9.32 11.4C9.45 11.24 9.5 11.12 9.58 10.94C9.66 10.76 9.62 10.6 9.55 10.46C9.48 10.32 8.98 9.05 8.76 8.8H9.5Z" fill="currentColor" opacity="0.22" />
               </svg>
-              WhatsApp: +8801772661151
+              WhatsApp Support
             </a>
 
-            <button type="button" class="btn-copy-phone" id="copyWhatsappBtn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2" />
-                <path d="M5 15H4C2.9 15 2 14.1 2 13V4C2 2.9 2.9 2 4 2H13C14.1 2 15 2.9 15 4V5" stroke="currentColor" stroke-width="2" />
-              </svg>
+            <button type="button" class="btn-copy" id="copyWhatsappBtn">
               Copy +8801772661151
             </button>
           </div>
@@ -1914,21 +1807,18 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>&copy; <span id="footerYear"></span> <strong>SS Tech Zone</strong> · SS TV for Android TV. Developed by <strong>Md Sagor Mia</strong>.</div>
-      <div>WhatsApp Support: <a href="https://wa.me/8801772661151" target="_blank" rel="noopener" style="color: var(--accent); font-family: var(--font-mono);">+8801772661151</a></div>
+      <div>&copy; <span id="footerYear"></span> <strong>SS Tech Zone</strong> · SS TV for Android Mobile &amp; Android TV. Developed by <strong>Md Sagor Mia</strong>.</div>
+      <div class="footer-links">
+        <a href="https://t.me/sstv_sstech" target="_blank" rel="noopener noreferrer">Telegram: @sstv_sstech</a>
+        <a href="https://wa.me/8801772661151" target="_blank" rel="noopener noreferrer">WhatsApp: +8801772661151</a>
+      </div>
     </div>
   </footer>
 
-  <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-  </button>
-
-  <!-- Full 16:9 Screenshot Lightbox -->
+  <!-- Static Full-Size Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot Preview">
-    <div class="lightbox-inner">
-      <div class="lightbox-frame" id="lightboxFrame">
+    <div class="lightbox-box">
+      <div class="lightbox-stage">
         <img id="lightboxImg" src="" alt="" />
       </div>
       <div class="lightbox-bar">
@@ -1936,7 +1826,7 @@
           <h4 id="lightboxTitle"></h4>
           <p id="lightboxDesc"></p>
         </div>
-        <div class="lightbox-controls">
+        <div class="lightbox-actions">
           <button type="button" class="lb-btn" id="lbPrev">&#8592; Prev</button>
           <button type="button" class="lb-btn" id="lbNext">Next &#8594;</button>
           <button type="button" class="lb-btn" id="lbClose">Close &#10005;</button>
@@ -1949,343 +1839,374 @@
 
   <script>
     (function () {
-      // =========================================================================
-      // 1. CUSTOM LOGO URL CONFIGURATION
-      // =========================================================================
-      const APP_LOGO_URL = "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/logo.png";
-
-      // =========================================================================
-      // 2. LIVE VERSION & DYNAMIC APK CONFIG (matches app's version.json feed)
-      // =========================================================================
       const VERSION_JSON_RAW_URL =
         "https://raw.githubusercontent.com/paybridgemfs/sstv-version/refs/heads/main/version.json";
       const VERSION_JSON_CDN_FALLBACK =
         "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/version.json";
 
-      // =========================================================================
-      // 3. SCREENSHOTS (16:9 Android TV Captures)
-      // =========================================================================
-      const SCREENSHOTS = [
+      const CDN_BASE = "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts";
+
+      // Logical user-journey order for Android TV (screenshorts/TV/)
+      const TV_SCREENSHOTS = [
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/1.Main_Interface.png",
-          tag: "01 · HOME GRID",
-          title: "Main Channel Grid & Telemetry",
-          desc: "D-pad optimized live TV grid with real-time clock, Wi-Fi/Ethernet status, voice search, and settings."
+          url: CDN_BASE + "/TV/Home.png",
+          tag: "TV 01 · HOME",
+          title: "Home Dashboard & Sidebar",
+          desc: "Left sidebar navigation rail with Continue Watching, categorized channel rows, and live telemetry."
         },
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/2.Channel_Playing.png",
-          tag: "02 · LIVE PLAYER",
-          title: "Fullscreen Broadcast Playback",
-          desc: "Clean edge-to-edge 16:9 live television playback powered by Media3 ExoPlayer."
+          url: CDN_BASE + "/TV/Live%20Tv.png",
+          tag: "TV 02 · LIVE TV",
+          title: "Live TV Category Grid",
+          desc: "Fast D-pad channel grid with top category filter bar and zero-lag focus navigation."
         },
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/3.Channel_Playing.png",
-          tag: "03 · CHANNEL OSD",
-          title: "Numbered Channel Overlay",
-          desc: "Instant numbered channel badge on tune-in or remote OK press with crisp legibility."
+          url: CDN_BASE + "/TV/Playing.png",
+          tag: "TV 03 · PLAYER",
+          title: "Fullscreen Live Playback & HUD",
+          desc: "Clean 16:9 Media3 ExoPlayer stream with Favorite, Quality, Aspect Ratio, Channels, and Reload HUD."
         },
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/4.Channel_Playing.png",
-          tag: "04 · AUTO-FAILOVER",
-          title: "Seamless Multi-Stream Playback",
-          desc: "Automatic failover across stream sources keeps live channels running smoothly."
+          url: CDN_BASE + "/TV/ChannelList.png",
+          tag: "TV 04 · SHELF",
+          title: "In-Player Channel Browse Shelf",
+          desc: "Press Down during playback to switch categories and channels without leaving live television."
         },
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/5.Channel_List_On_Playing.png",
-          tag: "05 · MINI LIST",
-          title: "Floating Mini Channel List",
-          desc: "Press Up or Down while watching to browse and jump between channels without leaving playback."
+          url: CDN_BASE + "/TV/Favorite.png",
+          tag: "TV 05 · FAVORITES",
+          title: "Favorites & Custom Arrange",
+          desc: "Quick access to starred channels with D-pad grab, move, drop, and reset ordering."
         },
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/6.Voice_Search.png",
-          tag: "06 · VOICE SEARCH",
-          title: "TV Voice Search Overlay",
-          desc: "Speak any channel name to instantly filter results or tune directly to the match."
+          url: CDN_BASE + "/TV/Search.png",
+          tag: "TV 06 · SEARCH",
+          title: "Instant Text & Voice Search",
+          desc: "Filter channels by name or category, or use TV voice search hands-free."
         },
         {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/7.Settings_Interface.png",
-          tag: "07 · TV SETTINGS",
-          title: "Playback & Engine Settings",
-          desc: "Fine-tune aspect ratio, failover timeout, buffer stability, decoder mode, and auto-play."
-        },
-        {
-          url: "https://cdn.jsdelivr.net/gh/paybridgemfs/sstv-version@main/screenshorts/8.Settings_Theme.png",
-          tag: "08 · 10 THEMES",
-          title: "10 Curated App Color Themes",
-          desc: "Switch between 10 dark-room calibrated frosted glass themes tailored for TV displays."
+          url: CDN_BASE + "/TV/Settings.png",
+          tag: "TV 07 · SETTINGS",
+          title: "TV Settings & 11 Themes",
+          desc: "Configure auto-play, aspect ratio, buffer stability, failover timeout, decoder, private PIN, and 11 themes."
         }
       ];
 
-      // ---- Custom Logo ----
-      function applyLogo(url) {
-        const clean = (url || "").trim();
-        if (!clean) return;
-        const pairs = [
-          [document.getElementById("navLogoWrap"), document.getElementById("navLogoImg")],
-          [document.getElementById("heroLogoWrap"), document.getElementById("heroLogoImg")]
-        ];
-        pairs.forEach(([wrap, img]) => {
-          img.onload = () => wrap.classList.add("has-image");
-          img.onerror = () => wrap.classList.remove("has-image");
-          img.src = clean;
-        });
-      }
-      applyLogo(APP_LOGO_URL);
+      // Logical user-journey order for Android Mobile (screenshorts/Mobile/)
+      const MOBILE_SCREENSHOTS = [
+        {
+          url: CDN_BASE + "/Mobile/Home.jpg",
+          tag: "MOBILE 01 · HOME",
+          title: "Mobile Home Dashboard",
+          desc: "Featured most-watched live banner, Continue Watching card, and horizontal category carousels."
+        },
+        {
+          url: CDN_BASE + "/Mobile/Live%20Tv.jpg",
+          tag: "MOBILE 02 · LIVE TV",
+          title: "Live TV Touch Grid",
+          desc: "Responsive multi-column channel grid with scrollable category chips and bottom navigation."
+        },
+        {
+          url: CDN_BASE + "/Mobile/Playing.jpg",
+          tag: "MOBILE 03 · PLAYER",
+          title: "Mobile Player & More Channels",
+          desc: "Inline 16:9 player with live channel browsing below, fullscreen toggle, PiP, lock, quality, and swipe gestures."
+        },
+        {
+          url: CDN_BASE + "/Mobile/Favorites.jpg",
+          tag: "MOBILE 04 · FAVORITES",
+          title: "Favorites & Drag Arrange",
+          desc: "Press and hold any favorite channel to drag and arrange your personal channel order."
+        },
+        {
+          url: CDN_BASE + "/Mobile/Search.jpg",
+          tag: "MOBILE 05 · SEARCH",
+          title: "Live Search & Voice Input",
+          desc: "Search channels by name or category with instant results and one-tap voice input."
+        },
+        {
+          url: CDN_BASE + "/Mobile/Settings.jpg",
+          tag: "MOBILE 06 · SETTINGS",
+          title: "Mobile Settings & Telegram",
+          desc: "11 dark-room themes, playback engine presets, startup toggles, private PIN, and official Telegram link."
+        }
+      ];
 
-      // ---- Mobile Nav Drawer ----
+      const CONTROLS_DATA = {
+        tv: [
+          { key: "LEFT / RIGHT · CH+/−", title: "Instant Channel Zap", desc: "Switch immediately to the previous or next channel while watching live TV." },
+          { key: "OK / UP", title: "TV Cinema HUD", desc: "Open bottom controls for Favorite, Stream Quality, Aspect Ratio, Channels, and Reload." },
+          { key: "DOWN", title: "Channel Browse Shelf", desc: "Open the categorized channel switcher right over your active broadcast." },
+          { key: "0 – 9 DIGITS", title: "Direct Number Tune", desc: "Type any channel number to jump directly to that channel from grid or player." },
+          { key: "HOLD OK", title: "Quick Favorite", desc: "Press and hold OK on any channel card to add or remove it from Favorites." },
+          { key: "BACK", title: "Layered Navigation", desc: "Step back cleanly from grid to category bar to sidebar, or exit player overlays." }
+        ],
+        mobile: [
+          { key: "SWIPE LEFT / RIGHT", title: "Swipe Channel Zap", desc: "Drag horizontally across the video stage to switch to the next or previous channel." },
+          { key: "LEFT EDGE SWIPE", title: "Video Brightness", desc: "Slide up or down on the left side of the video to dim or brighten playback independently." },
+          { key: "RIGHT EDGE SWIPE", title: "Volume Control", desc: "Slide up or down on the right side of the video to adjust volume smoothly." },
+          { key: "PIP BUTTON / HOME", title: "Picture-in-Picture", desc: "Minimize live playback into a floating PiP window (Android 8.0+) while using other apps." },
+          { key: "LOCK ICON", title: "Screen Touch Lock", desc: "Lock player controls and gestures to prevent accidental taps while watching." },
+          { key: "LONG PRESS CARD", title: "Favorite & Drag Order", desc: "Long-press a channel to favorite it, or hold and drag inside Favorites Arrange mode." }
+        ]
+      };
+
+      // ---- Mobile Drawer ----
       const menuToggleBtn = document.getElementById("menuToggleBtn");
       const mobileDrawer = document.getElementById("mobileDrawer");
       menuToggleBtn.addEventListener("click", () => {
-        const isOpen = mobileDrawer.classList.toggle("open");
-        menuToggleBtn.setAttribute("aria-expanded", String(isOpen));
+        const open = mobileDrawer.classList.toggle("open");
+        menuToggleBtn.setAttribute("aria-expanded", String(open));
       });
-      mobileDrawer.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
+      mobileDrawer.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
           mobileDrawer.classList.remove("open");
           menuToggleBtn.setAttribute("aria-expanded", "false");
         });
       });
 
-      // ---- Light / Dark Theme Toggle ----
+      // ---- Theme Switcher ----
       const htmlEl = document.documentElement;
       const themeToggle = document.getElementById("themeToggle");
       const themeIcon = document.getElementById("themeIcon");
       const themeLabel = document.getElementById("themeLabel");
-
       const SUN_SVG =
         '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
       const MOON_SVG =
         '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-      function setTheme(theme) {
-        htmlEl.setAttribute("data-theme", theme);
-        try { localStorage.setItem("sstv_share_theme", theme); } catch (_) {}
-        if (theme === "dark") {
-          themeIcon.innerHTML = SUN_SVG;
-          themeLabel.textContent = "Light";
-        } else {
-          themeIcon.innerHTML = MOON_SVG;
-          themeLabel.textContent = "Dark";
-        }
-        const metaTheme = document.querySelector('meta[name="theme-color"]');
-        if (metaTheme) {
-          metaTheme.setAttribute("content", theme === "dark" ? "#050810" : "#F4F7FB");
-        }
+      function applyTheme(mode) {
+        htmlEl.setAttribute("data-theme", mode);
+        try { localStorage.setItem("sstv_page_theme", mode); } catch (_) {}
+        themeIcon.innerHTML = mode === "dark" ? SUN_SVG : MOON_SVG;
+        themeLabel.textContent = mode === "dark" ? "Light" : "Dark";
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", mode === "dark" ? "#0B0B0E" : "#F6F5F2");
       }
 
-      const savedTheme = (() => {
-        try { return localStorage.getItem("sstv_share_theme"); } catch (_) { return null; }
+      const storedTheme = (() => {
+        try { return localStorage.getItem("sstv_page_theme"); } catch (_) { return null; }
       })();
-      setTheme(savedTheme === "light" ? "light" : "dark");
-
+      applyTheme(storedTheme === "light" ? "light" : "dark");
       themeToggle.addEventListener("click", () => {
-        setTheme(htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark");
+        applyTheme(htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark");
       });
 
-      // ---- Scroll Progress + Back To Top + Scroll Reveal (rAF throttled) ----
-      const scrollProgress = document.getElementById("scrollProgress");
-      const backToTopBtn = document.getElementById("backToTopBtn");
-      let scrollTicking = false;
+      // ---- Hero Static Previewer (Zero Auto-Slide, Zero Slide Animation) ----
+      let heroPlatform = "tv";
+      let heroIndex = 0;
 
-      function updateScrollUi() {
-        scrollTicking = false;
-        const doc = document.documentElement;
-        const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
-        const ratio = Math.min(1, Math.max(0, window.scrollY / maxScroll));
-        scrollProgress.style.transform = "scaleX(" + ratio.toFixed(4) + ")";
-        backToTopBtn.classList.toggle("visible", window.scrollY > 420);
-      }
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!scrollTicking) {
-            scrollTicking = true;
-            requestAnimationFrame(updateScrollUi);
-          }
-        },
-        { passive: true }
-      );
-      updateScrollUi();
-
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      function observeReveals() {
-        const nodes = document.querySelectorAll(".reveal");
-        if (!("IntersectionObserver" in window)) {
-          nodes.forEach((el) => el.classList.add("in-view"));
-          return;
-        }
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const delay = Math.min(180, Number(entry.target.getAttribute("data-delay") || "0"));
-                entry.target.style.transitionDelay = delay + "ms";
-                entry.target.classList.add("in-view");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.04, rootMargin: "0px 0px 80px 0px" }
-        );
-        nodes.forEach((el) => observer.observe(el));
-      }
-
-      // ---- Eager Parallel Preload of ALL Images + Stacked TV Slides ----
-      let activeSlideIndex = 0;
-      const SLIDE_DURATION_MS = 4800;
-      const heroTvScreen = document.getElementById("heroTvScreen");
-      const heroSlidesTrack = document.getElementById("heroSlidesTrack");
+      const heroTabTv = document.getElementById("heroTabTv");
+      const heroTabMobile = document.getElementById("heroTabMobile");
+      const heroPreviewImg = document.getElementById("heroPreviewImg");
+      const heroPreviewTitle = document.getElementById("heroPreviewTitle");
+      const heroPreviewDesc = document.getElementById("heroPreviewDesc");
+      const heroPreviewCounter = document.getElementById("heroPreviewCounter");
       const heroThumbStrip = document.getElementById("heroThumbStrip");
-      const galleryGrid = document.getElementById("galleryGrid");
-      const slideImageEls = [];
+      const heroPreviewStage = document.getElementById("heroPreviewStage");
 
-      function preloadAllImagesEagerly() {
-        SCREENSHOTS.forEach((shot, index) => {
-          const pre = new Image();
-          pre.decoding = "async";
-          if ("fetchPriority" in pre) {
-            pre.fetchPriority = index < 2 ? "high" : "auto";
-          }
-          pre.src = shot.url;
-        });
+      function getShots(platform) {
+        return platform === "mobile" ? MOBILE_SCREENSHOTS : TV_SCREENSHOTS;
       }
-      preloadAllImagesEagerly();
 
-      function renderHeroSlidesAndThumbs() {
-        heroSlidesTrack.innerHTML = "";
-        heroThumbStrip.innerHTML = "";
+      function renderHeroPreview() {
+        const shots = getShots(heroPlatform);
+        heroIndex = (heroIndex + shots.length) % shots.length;
+        const active = shots[heroIndex];
 
-        SCREENSHOTS.forEach((shot, index) => {
-          const slideImg = document.createElement("img");
-          slideImg.src = shot.url;
-          slideImg.alt = shot.title;
-          slideImg.loading = "eager";
-          slideImg.decoding = "async";
-          slideImg.className = "tv-slide-layer" + (index === activeSlideIndex ? " active" : "");
-          heroSlidesTrack.appendChild(slideImg);
-          slideImageEls.push(slideImg);
+        heroPreviewImg.src = active.url;
+        heroPreviewImg.alt = active.title;
+        heroPreviewTitle.textContent = active.title;
+        heroPreviewDesc.textContent = active.desc;
+        heroPreviewCounter.textContent =
+          String(heroIndex + 1).padStart(2, "0") + " / " + String(shots.length).padStart(2, "0");
 
+        heroTabTv.classList.toggle("active", heroPlatform === "tv");
+        heroTabTv.setAttribute("aria-selected", String(heroPlatform === "tv"));
+        heroTabMobile.classList.toggle("active", heroPlatform === "mobile");
+        heroTabMobile.setAttribute("aria-selected", String(heroPlatform === "mobile"));
+
+        heroThumbStrip.textContent = "";
+        shots.forEach((shot, idx) => {
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "tv-thumb" + (index === activeSlideIndex ? " active" : "");
-          btn.setAttribute("aria-label", "Preview " + shot.title);
-          btn.innerHTML =
-            '<img src="' + shot.url + '" alt="' + shot.title + '" loading="eager" decoding="async" />';
+          btn.className =
+            "thumb-btn" +
+            (heroPlatform === "mobile" ? " is-mobile" : "") +
+            (idx === heroIndex ? " active" : "");
+          btn.setAttribute("aria-label", "Show " + shot.title);
+          const img = document.createElement("img");
+          img.src = shot.url;
+          img.alt = shot.title;
+          img.loading = "lazy";
+          img.decoding = "async";
+          btn.appendChild(img);
           btn.addEventListener("click", () => {
-            setHeroSlide(index);
-            resetAutoCycle();
+            heroIndex = idx;
+            renderHeroPreview();
           });
           heroThumbStrip.appendChild(btn);
         });
       }
 
-      function setHeroSlide(index) {
-        activeSlideIndex = (index + SCREENSHOTS.length) % SCREENSHOTS.length;
-        slideImageEls.forEach((imgEl, idx) => {
-          imgEl.classList.toggle("active", idx === activeSlideIndex);
-        });
-        Array.from(heroThumbStrip.children).forEach((el, idx) => {
-          el.classList.toggle("active", idx === activeSlideIndex);
-        });
-      }
-
-      let didSwipeSlide = false;
-      heroTvScreen.addEventListener("click", () => {
-        if (didSwipeSlide) {
-          didSwipeSlide = false;
-          return;
+      heroTabTv.addEventListener("click", () => {
+        if (heroPlatform !== "tv") {
+          heroPlatform = "tv";
+          heroIndex = 0;
+          renderHeroPreview();
         }
-        openLightbox(activeSlideIndex);
       });
-      heroTvScreen.addEventListener("keydown", (e) => {
+
+      heroTabMobile.addEventListener("click", () => {
+        if (heroPlatform !== "mobile") {
+          heroPlatform = "mobile";
+          heroIndex = 0;
+          renderHeroPreview();
+        }
+      });
+
+      document.getElementById("heroPrevBtn").addEventListener("click", () => {
+        heroIndex -= 1;
+        renderHeroPreview();
+      });
+
+      document.getElementById("heroNextBtn").addEventListener("click", () => {
+        heroIndex += 1;
+        renderHeroPreview();
+      });
+
+      heroPreviewStage.addEventListener("click", () => openLightbox(heroPlatform, heroIndex));
+      heroPreviewStage.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          openLightbox(activeSlideIndex);
+          openLightbox(heroPlatform, heroIndex);
         }
       });
 
-      function attachHorizontalSwipe(element, onPrev, onNext, onSwipeDetected) {
-        let startX = 0;
-        let startY = 0;
-        element.addEventListener("touchstart", (e) => {
-          if (e.touches.length !== 1) return;
-          startX = e.touches[0].clientX;
-          startY = e.touches[0].clientY;
-        }, { passive: true });
-        element.addEventListener("touchend", (e) => {
-          if (e.changedTouches.length !== 1) return;
-          const dx = e.changedTouches[0].clientX - startX;
-          const dy = e.changedTouches[0].clientY - startY;
-          if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.3) {
-            if (onSwipeDetected) onSwipeDetected();
-            if (dx < 0) onNext(); else onPrev();
-          }
-        }, { passive: true });
+      renderHeroPreview();
+
+      // ---- Controls Tabs (TV Remote vs Mobile Touch) ----
+      const ctrlTabTv = document.getElementById("ctrlTabTv");
+      const ctrlTabMobile = document.getElementById("ctrlTabMobile");
+      const controlsGrid = document.getElementById("controlsGrid");
+
+      function renderControls(platform) {
+        ctrlTabTv.classList.toggle("active", platform === "tv");
+        ctrlTabTv.setAttribute("aria-selected", String(platform === "tv"));
+        ctrlTabMobile.classList.toggle("active", platform === "mobile");
+        ctrlTabMobile.setAttribute("aria-selected", String(platform === "mobile"));
+
+        controlsGrid.textContent = "";
+        const frag = document.createDocumentFragment();
+        CONTROLS_DATA[platform].forEach((item) => {
+          const card = document.createElement("div");
+          card.className = "keymap-card";
+
+          const badge = document.createElement("span");
+          badge.className = "keycap";
+          badge.textContent = item.key;
+
+          const title = document.createElement("strong");
+          title.textContent = item.title;
+
+          const desc = document.createElement("p");
+          desc.textContent = item.desc;
+
+          card.append(badge, title, desc);
+          frag.appendChild(card);
+        });
+        controlsGrid.appendChild(frag);
       }
 
-      attachHorizontalSwipe(
-        heroTvScreen,
-        () => { setHeroSlide(activeSlideIndex - 1); resetAutoCycle(); },
-        () => { setHeroSlide(activeSlideIndex + 1); resetAutoCycle(); },
-        () => { didSwipeSlide = true; }
-      );
+      ctrlTabTv.addEventListener("click", () => renderControls("tv"));
+      ctrlTabMobile.addEventListener("click", () => renderControls("mobile"));
+      renderControls("tv");
 
-      let cycleTimer = null;
-      function resetAutoCycle() {
-        if (cycleTimer) clearInterval(cycleTimer);
-        cycleTimer = setInterval(() => {
-          if (!document.getElementById("lightbox").classList.contains("open")) {
-            setHeroSlide(activeSlideIndex + 1);
-          }
-        }, SLIDE_DURATION_MS);
+      // ---- Screenshots Gallery (TV & Mobile Tabs) ----
+      const galTabTv = document.getElementById("galTabTv");
+      const galTabMobile = document.getElementById("galTabMobile");
+      const galleryHint = document.getElementById("galleryHint");
+      const galleryContainer = document.getElementById("galleryContainer");
+
+      function renderGallery(platform) {
+        const isMobile = platform === "mobile";
+        const shots = getShots(platform);
+
+        galTabTv.classList.toggle("active", !isMobile);
+        galTabTv.setAttribute("aria-selected", String(!isMobile));
+        galTabMobile.classList.toggle("active", isMobile);
+        galTabMobile.setAttribute("aria-selected", String(isMobile));
+
+        galleryHint.textContent = isMobile
+          ? "Showing Android Mobile interface (portrait)"
+          : "Showing Android TV interface (16:9)";
+
+        galleryContainer.className = isMobile ? "gallery-grid-mobile" : "gallery-grid-tv";
+        galleryContainer.textContent = "";
+
+        const frag = document.createDocumentFragment();
+        shots.forEach((shot, index) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "shot-card";
+
+          const media = document.createElement("div");
+          media.className = "shot-media " + (isMobile ? "mobile-ratio" : "tv-ratio");
+
+          const img = document.createElement("img");
+          img.src = shot.url;
+          img.alt = shot.title;
+          img.loading = "lazy";
+          img.decoding = "async";
+
+          const badge = document.createElement("span");
+          badge.className = "shot-badge";
+          badge.textContent = shot.tag;
+
+          media.append(img, badge);
+
+          const meta = document.createElement("div");
+          meta.className = "shot-meta";
+
+          const textWrap = document.createElement("div");
+          const title = document.createElement("div");
+          title.className = "shot-title";
+          title.textContent = shot.title;
+
+          const sub = document.createElement("div");
+          sub.className = "shot-sub";
+          sub.textContent = shot.desc;
+
+          textWrap.append(title, sub);
+          meta.appendChild(textWrap);
+
+          btn.append(media, meta);
+          btn.addEventListener("click", () => openLightbox(platform, index));
+          frag.appendChild(btn);
+        });
+        galleryContainer.appendChild(frag);
       }
 
-      renderHeroSlidesAndThumbs();
-      resetAutoCycle();
+      galTabTv.addEventListener("click", () => renderGallery("tv"));
+      galTabMobile.addEventListener("click", () => renderGallery("mobile"));
+      renderGallery("tv");
 
-      // Render ALL 16:9 Screenshot Gallery Cards eagerly at once (zero lazy-load stutter)
-      const galleryFrag = document.createDocumentFragment();
-      SCREENSHOTS.forEach((shot, index) => {
-        const card = document.createElement("button");
-        card.type = "button";
-        card.className = "shot-card reveal";
-        card.setAttribute("data-delay", String((index % 2) * 50));
-        card.innerHTML =
-          '<div class="shot-media">' +
-            '<img src="' + shot.url + '" alt="' + shot.title + '" loading="eager" decoding="async" />' +
-            '<span class="shot-badge">' + shot.tag + '</span>' +
-          '</div>' +
-          '<div class="shot-caption">' +
-            '<div>' +
-              '<div class="shot-title">' + shot.title + '</div>' +
-              '<div class="shot-sub">' + shot.desc + '</div>' +
-            '</div>' +
-            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:var(--accent)"><path d="M15 3H21V9M9 21H3V15M21 3L14 10M3 21L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-          '</div>';
-        card.addEventListener("click", () => openLightbox(index));
-        galleryFrag.appendChild(card);
-      });
-      galleryGrid.appendChild(galleryFrag);
-
-      observeReveals();
-
-      // ---- Lightbox Logic ----
+      // ---- Static Lightbox ----
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightboxImg");
       const lightboxTitle = document.getElementById("lightboxTitle");
       const lightboxDesc = document.getElementById("lightboxDesc");
-      let lightboxIndex = 0;
+      let lbPlatform = "tv";
+      let lbIndex = 0;
 
-      function openLightbox(index) {
-        lightboxIndex = (index + SCREENSHOTS.length) % SCREENSHOTS.length;
-        const shot = SCREENSHOTS[lightboxIndex];
+      function openLightbox(platform, index) {
+        lbPlatform = platform;
+        const shots = getShots(lbPlatform);
+        lbIndex = (index + shots.length) % shots.length;
+        const shot = shots[lbIndex];
         lightboxImg.src = shot.url;
         lightboxImg.alt = shot.title;
-        lightboxTitle.textContent = shot.title;
+        lightboxTitle.textContent = shot.tag + " — " + shot.title;
         lightboxDesc.textContent = shot.desc;
         lightbox.classList.add("open");
       }
@@ -2294,56 +2215,51 @@
         lightbox.classList.remove("open");
       }
 
-      document.getElementById("lbPrev").addEventListener("click", () => openLightbox(lightboxIndex - 1));
-      document.getElementById("lbNext").addEventListener("click", () => openLightbox(lightboxIndex + 1));
+      document.getElementById("lbPrev").addEventListener("click", () => openLightbox(lbPlatform, lbIndex - 1));
+      document.getElementById("lbNext").addEventListener("click", () => openLightbox(lbPlatform, lbIndex + 1));
       document.getElementById("lbClose").addEventListener("click", closeLightbox);
       lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) closeLightbox();
       });
-      attachHorizontalSwipe(
-        document.getElementById("lightboxFrame"),
-        () => openLightbox(lightboxIndex - 1),
-        () => openLightbox(lightboxIndex + 1)
-      );
       document.addEventListener("keydown", (e) => {
         if (!lightbox.classList.contains("open")) return;
         if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft") openLightbox(lightboxIndex - 1);
-        if (e.key === "ArrowRight") openLightbox(lightboxIndex + 1);
+        if (e.key === "ArrowLeft") openLightbox(lbPlatform, lbIndex - 1);
+        if (e.key === "ArrowRight") openLightbox(lbPlatform, lbIndex + 1);
       });
 
       // ---- Toast & Copy WhatsApp ----
       const toastEl = document.getElementById("toast");
       let toastTimer = null;
-      function showToast(msg) {
-        toastEl.textContent = msg;
+      function showToast(message) {
+        toastEl.textContent = message;
         toastEl.classList.add("show");
         if (toastTimer) clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2600);
+        toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2400);
       }
 
       document.getElementById("copyWhatsappBtn").addEventListener("click", async () => {
         const phone = "+8801772661151";
         try {
           await navigator.clipboard.writeText(phone);
-          showToast("Copied WhatsApp number: " + phone);
+          showToast("Copied WhatsApp: " + phone);
         } catch (_) {
           showToast("WhatsApp: " + phone);
         }
       });
 
-      document.getElementById("footerYear").textContent = new Date().getFullYear();
+      document.getElementById("footerYear").textContent = String(new Date().getFullYear());
 
-      // ---- Dynamic version.json & Dynamic APK Size Resolver ----
+      // ---- Live version.json & Dynamic APK Size Resolver ----
       function formatBytes(bytes) {
         if (!Number.isFinite(bytes) || bytes <= 0) return null;
         const mb = bytes / (1024 * 1024);
-        if (mb >= 1) return mb.toFixed(2) + " MB";
-        return (bytes / 1024).toFixed(0) + " KB";
+        return mb >= 1 ? mb.toFixed(2) + " MB" : (bytes / 1024).toFixed(0) + " KB";
       }
 
       function normalizeGitHubUrl(url) {
-        const clean = (url || "").trim();
+        const clean = String(url || "").trim();
+        if (!/^https?:\/\//i.test(clean)) return "";
         const blobMatch = clean.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)$/i);
         if (blobMatch) {
           return (
@@ -2354,39 +2270,31 @@
         return clean;
       }
 
-      async function fetchVersionJsonWithBypass() {
+      async function fetchVersionJson() {
         const bust = "t=" + Date.now();
-        const candidates = [
-          VERSION_JSON_RAW_URL + "?" + bust,
-          VERSION_JSON_CDN_FALLBACK + "?" + bust
-        ];
-        for (const url of candidates) {
+        const urls = [VERSION_JSON_RAW_URL + "?" + bust, VERSION_JSON_CDN_FALLBACK + "?" + bust];
+        for (const url of urls) {
           try {
             const res = await fetch(url);
             if (!res.ok) continue;
             const data = await res.json();
-            if (data && (data.latestVersionName || data.apkUrl)) {
-              return data;
-            }
+            if (data && (data.latestVersionName || data.apkUrl)) return data;
           } catch (_) {}
         }
-        throw new Error("Unable to fetch version.json");
+        throw new Error("Failed to load version.json");
       }
 
-      async function resolveDynamicApkSizeBytes(apkUrl) {
+      async function resolveApkSizeBytes(apkUrl) {
         if (!apkUrl) return null;
 
-        const tagReleaseMatch = apkUrl.match(
+        const tagMatch = apkUrl.match(
           /^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/releases\/download\/([^/]+)\/([^?#]+)/i
         );
-        if (tagReleaseMatch) {
+        if (tagMatch) {
           try {
-            const owner = tagReleaseMatch[1];
-            const repo = tagReleaseMatch[2];
-            const tag = tagReleaseMatch[3];
-            const fileName = decodeURIComponent(tagReleaseMatch[4]);
+            const fileName = decodeURIComponent(tagMatch[4]);
             const apiRes = await fetch(
-              "https://api.github.com/repos/" + owner + "/" + repo + "/releases/tags/" + encodeURIComponent(tag)
+              "https://api.github.com/repos/" + tagMatch[1] + "/" + tagMatch[2] + "/releases/tags/" + encodeURIComponent(tagMatch[3])
             );
             if (apiRes.ok) {
               const release = await apiRes.json();
@@ -2398,16 +2306,14 @@
           } catch (_) {}
         }
 
-        const latestReleaseMatch = apkUrl.match(
+        const latestMatch = apkUrl.match(
           /^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/releases\/latest\/download\/([^?#]+)/i
         );
-        if (latestReleaseMatch) {
+        if (latestMatch) {
           try {
-            const owner = latestReleaseMatch[1];
-            const repo = latestReleaseMatch[2];
-            const fileName = decodeURIComponent(latestReleaseMatch[3]);
+            const fileName = decodeURIComponent(latestMatch[3]);
             const apiRes = await fetch(
-              "https://api.github.com/repos/" + owner + "/" + repo + "/releases/latest"
+              "https://api.github.com/repos/" + latestMatch[1] + "/" + latestMatch[2] + "/releases/latest"
             );
             if (apiRes.ok) {
               const release = await apiRes.json();
@@ -2428,22 +2334,16 @@
         } catch (_) {}
 
         try {
-          const rangeRes = await fetch(apkUrl, {
-            method: "GET",
-            headers: { Range: "bytes=0-0" }
-          });
-          const contentRange = rangeRes.headers.get("content-range") || "";
-          const totalMatch = contentRange.match(/\/(\d+)$/);
-          if (totalMatch) {
-            const total = Number(totalMatch[1]);
-            if (Number.isFinite(total) && total > 0) return total;
-          }
+          const rangeRes = await fetch(apkUrl, { method: "GET", headers: { Range: "bytes=0-0" } });
+          const range = rangeRes.headers.get("content-range") || "";
+          const match = range.match(/\/(\d+)$/);
+          if (match && Number(match[1]) > 0) return Number(match[1]);
         } catch (_) {}
 
         return null;
       }
 
-      async function loadDynamicAppMetadata() {
+      async function loadReleaseMetadata() {
         const heroVersionBadge = document.getElementById("heroVersionBadge");
         const specVersion = document.getElementById("specVersion");
         const specSize = document.getElementById("specSize");
@@ -2454,15 +2354,14 @@
         const downloadBtnSub = document.getElementById("downloadBtnSub");
 
         try {
-          const info = await fetchVersionJsonWithBypass();
-          const versionName = String(info.latestVersionName || "1.0.0").trim();
-          const versionCode = info.latestVersionCode ? " (Build " + info.latestVersionCode + ")" : "";
-          const rawApkUrl = String(info.apkUrl || "").trim();
-          const downloadUrl = normalizeGitHubUrl(rawApkUrl);
+          const info = await fetchVersionJson();
+          const versionName = String(info.latestVersionName || "2.1.1").trim();
+          const buildText = info.latestVersionCode ? " (Build " + info.latestVersionCode + ")" : "";
+          const downloadUrl = normalizeGitHubUrl(info.apkUrl);
 
           heroVersionBadge.textContent = "v" + versionName;
           specVersion.textContent = "v" + versionName;
-          tableVersion.textContent = "v" + versionName + versionCode;
+          tableVersion.textContent = "v" + versionName + buildText;
 
           if (downloadUrl) {
             primaryDownloadBtn.href = downloadUrl;
@@ -2471,43 +2370,43 @@
 
             navDownloadLink.href = downloadUrl;
             navDownloadLink.setAttribute("download", "SS-TV-v" + versionName + ".apk");
-            downloadBtnSub.textContent = "Version " + versionName + " · Checking size...";
+            downloadBtnSub.textContent = "v" + versionName + " · Checking size...";
           } else {
             downloadBtnSub.textContent = "Version " + versionName;
           }
 
           const sizeBytes =
             (Number(info.apkSizeBytes) > 0 ? Number(info.apkSizeBytes) : null) ||
-            (await resolveDynamicApkSizeBytes(downloadUrl));
+            (await resolveApkSizeBytes(downloadUrl));
 
-          const formattedSize = formatBytes(sizeBytes);
-          if (formattedSize) {
-            specSize.textContent = formattedSize;
-            tableSize.textContent = formattedSize;
-            downloadBtnSub.textContent = "Version " + versionName + " · " + formattedSize;
+          const formatted = formatBytes(sizeBytes);
+          if (formatted) {
+            specSize.textContent = formatted;
+            tableSize.textContent = formatted;
+            downloadBtnSub.textContent = "v" + versionName + " · " + formatted;
           } else {
             specSize.textContent = "Android APK";
-            tableSize.textContent = "Verified at download";
-            downloadBtnSub.textContent = "Version " + versionName + " · Official APK";
+            tableSize.textContent = "Official APK";
+            downloadBtnSub.textContent = "v" + versionName + " · Official APK";
           }
         } catch (_) {
-          heroVersionBadge.textContent = "Latest Release";
-          specVersion.textContent = "Available";
+          heroVersionBadge.textContent = "Latest APK";
+          specVersion.textContent = "Latest";
           specSize.textContent = "Android APK";
-          tableVersion.textContent = "Check version.json";
+          tableVersion.textContent = "Check release feed";
           tableSize.textContent = "Check on download";
           downloadBtnSub.textContent = "Tap to retry loading release";
           primaryDownloadBtn.classList.remove("is-loading");
           primaryDownloadBtn.addEventListener("click", (e) => {
             if (primaryDownloadBtn.getAttribute("href") === "#") {
               e.preventDefault();
-              loadDynamicAppMetadata();
+              loadReleaseMetadata();
             }
           });
         }
       }
 
-      loadDynamicAppMetadata();
+      loadReleaseMetadata();
     })();
   </script>
 </body>
